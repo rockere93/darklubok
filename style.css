@@ -86,12 +86,24 @@ body {
     margin: 30px auto;
 }
 
+p {
+    margin-bottom: 15px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 3px solid  rgb(59 36 36);
+}
+
 .button {
     min-height: 20px;
     min-width: 20px;
     font-size: 36px;
     margin-top: 20px;
-    background-color: none;
+    background-color: rgb(255, 255, 255, 0.3);
     cursor: pointer;
 }
 
