@@ -1,0 +1,1 @@
+I'm making this game for my learning to JS.  
