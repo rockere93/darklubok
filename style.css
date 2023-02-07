@@ -75,7 +75,7 @@ body {
     background-size: cover;
 }
 
-.textfield {
+.mainfield {
     max-width: 800px;
     min-height: 800px;
     padding: 134px 100px;
@@ -86,7 +86,7 @@ body {
     margin: 30px auto;
 }
 
-p {
+.textmessage {
     margin-bottom: 15px;
 }
 
