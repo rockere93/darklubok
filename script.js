@@ -12,7 +12,6 @@ let player = {
 let story = {
     goToMessage (message) {
         textMessage.innerHTML = ' ' + `${message.text}`;
-    
     },
 
     message0: {
@@ -20,7 +19,7 @@ let story = {
         actions: {chooseSex (sex) {
             player.gender = sex;
             story.goToMessage(story.message1);
-            console.log(player.gender)           
+                
         }
     },
 
@@ -31,21 +30,24 @@ let story = {
     message2: {
         text: "Ты находишь в темной бревенчатой комнате, единственный свет – из узкого, как бойница, окна, через который видно краешек серой хмари. В нос бьет сильный запах плесени и влажного мха, который утыкан между старыми потемневшими брёвнами. По центру стоит печь, достаточно большая, чтобы туда поместился человек, но чья кладка рассыпается как будто прямо на глазах, обнажая тёмное и пугающее нутро. Также видна дверь, к которой можно подойти.",
         actions: {
-            lookAround () {
-              
+
+            get names () {
+                this.lookAround._name = "Оглядеться";
+                this.comeToDoor._name = "Подойти к двери"; 
+                this.inspectOven._name = "Осмотреть печь";
                 
+            },    
+            /* можно сделать функцию итератор, которая будет выдавать по одному _name при обращении для создания, тогда не придется вызывать функцию*/
+            lookAround () {
+                console.log(this.lookAround._name)                    
             },
             comeToDoor () {
-
+                 
             },
 
             inspectOven () {
-
             },
         }
     }
 }
-
-story.message2.actions.lookAround()
-console.log(story.message2.actions.lookAround._name);
 
