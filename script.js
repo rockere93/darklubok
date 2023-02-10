@@ -39,7 +39,7 @@ let story = {
             },    
             /* можно сделать функцию итератор, которая будет выдавать по одному _name при обращении для создания, тогда не придется вызывать функцию*/
             lookAround () {
-                console.log(this.lookAround._name)                    
+                alert(this.lookAround._name)                    
             },
             comeToDoor () {
                  
@@ -51,3 +51,14 @@ let story = {
     }
 }
 
+
+function makeButton (name, func) {
+   let button = document.createElement('div');
+   button.classList.add('button');
+   button.textContent = `${name}`;
+   button.onclick = func;
+  return button
+}
+
+let buttonsArray = story.message2.actions.names
+buttonsBlock.append(makeButton(story.message2.actions[buttonsArray[0]]._name, () => story.message2.actions.lookAround()));
