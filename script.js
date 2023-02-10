@@ -12,6 +12,8 @@ let player = {
 let story = {
     goToMessage (message) {
         textMessage.innerHTML = ' ' + `${message.text}`;
+        let buttons = story.message2.actions.names;
+
     },
 
     message0: {
@@ -35,7 +37,10 @@ let story = {
                 this.lookAround._name = "Оглядеться";
                 this.comeToDoor._name = "Подойти к двери"; 
                 this.inspectOven._name = "Осмотреть печь";
-                
+                Object.defineProperty(this, "names", {
+                    enumerable: false
+                  });
+                return Object.keys(this);
             },    
             /* можно сделать функцию итератор, которая будет выдавать по одному _name при обращении для создания, тогда не придется вызывать функцию*/
             lookAround () {
