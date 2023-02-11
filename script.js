@@ -12,8 +12,13 @@ let player = {
 let story = {
     goToStoryCard (storyCard) {
         textCard.innerHTML = ' ' + `${storyCard.text}`;
-        let buttonsArray = story.storyCard2.actions.names
-        buttonsBlock.append(makeButton(story.storyCard.actions[buttonsArray[0]]._name, () => story.storyCard2.actions.lookAround()));
+        buttonsBlock.innerHTML = ' ';
+        let actionsArray = storyCard.actions.names;
+        for (let action of actionsArray) {
+            let buttonName = storyCard.actions[action]._name;
+            let button = makeButton(buttonName, storyCard.actions[action]);
+            buttonsBlock.append(button);
+        }
     },
 
     storyCard0: {
@@ -21,7 +26,7 @@ let story = {
         actions: {
             chooseSex (sex) {
             player.gender = sex;
-            story.goTostoryCard(story.storyCard1);
+            story.goToStoryCard(story.storyCard1);
                 
         }
     },
@@ -30,6 +35,16 @@ let story = {
     storyCard1: {
         get text () { return `${player.gender}, ну что ж. В общем, здесь на лубочно-клюквенном языке мы и закончим. Это тебе не сказка и даже не быль. Это кошмар, в котором тебе не повезло оказаться.`},
         actions: {
+            get names () {
+                this.goToNext._name = "Продолжить";
+                Object.defineProperty(this, "names", {
+                    enumerable: false
+                  });
+                return Object.keys(this);
+            },
+            goToNext() {
+                story.goToStoryCard(story.storyCard2);                
+            }
 
         }
     },
@@ -68,5 +83,3 @@ function makeButton (name, func) {
   return button
 }
 
-let buttonsArray = story.message2.actions.names
-buttonsBlock.append(makeButton(story.message2.actions[buttonsArray[0]]._name, () => story.message2.actions.lookAround()));
