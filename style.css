@@ -80,16 +80,21 @@ body {
     min-height: 800px;
     padding: 134px 100px;
     font-size: 36px;
-    color: rgb(59 36 36);
+    color: rgba(59, 36, 36, 0.0);
     background: url(img/svitok.png), no-repeat;
     background-size: cover;
     margin: 30px auto;
 }
 
-.textmessage {
-    margin-bottom: 15px;
+.textCard {
+    margin-bottom: 15px; 
 }
 
+.animation {
+        color:rgb(59, 36, 36, 1);
+        transition-property: color;
+        transition-duration: 3s;
+}
 
 .buttons {
     display: flex;
