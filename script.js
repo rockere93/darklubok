@@ -1,5 +1,5 @@
 'use strict'
-let textMessage = document.querySelector('.textmessage')
+let textCard = document.querySelector('.textCard')
 let buttonsBlock = document.querySelector('.buttons');
 
 let player = {
@@ -10,29 +10,32 @@ let player = {
 
 
 let story = {
-    goToMessage (message) {
-        textMessage.innerHTML = ' ' + `${message.text}`;
-        let buttons = story.message2.actions.names;
-
+    goToStoryCard (storyCard) {
+        textCard.innerHTML = ' ' + `${storyCard.text}`;
+        let buttonsArray = story.storyCard2.actions.names
+        buttonsBlock.append(makeButton(story.storyCard.actions[buttonsArray[0]]._name, () => story.storyCard2.actions.lookAround()));
     },
 
-    message0: {
+    storyCard0: {
         text: 'Приветствую тебя, добрый молодец! Али ты девица красная? Проходи, не стесняйся, о себе расскажи, не тушайся. Мы тута всем рады, для каждого и хлеб, и соль найдется, а коли не найдется так чем богаты, тем и рады будем.',
-        actions: {chooseSex (sex) {
+        actions: {
+            chooseSex (sex) {
             player.gender = sex;
-            story.goToMessage(story.message1);
+            story.goTostoryCard(story.storyCard1);
                 
         }
     },
 
     },
-    message1: {
-        get text () { return `${player.gender}, ну что ж. В общем, здесь на лубочно-клюквенном языке мы и закончим. Это тебе не сказка и даже не быль. Это кошмар, в котором тебе не повезло оказаться.`}
-    },
-    message2: {
-        text: "Ты находишь в темной бревенчатой комнате, единственный свет – из узкого, как бойница, окна, через который видно краешек серой хмари. В нос бьет сильный запах плесени и влажного мха, который утыкан между старыми потемневшими брёвнами. По центру стоит печь, достаточно большая, чтобы туда поместился человек, но чья кладка рассыпается как будто прямо на глазах, обнажая тёмное и пугающее нутро. Также видна дверь, к которой можно подойти.",
+    storyCard1: {
+        get text () { return `${player.gender}, ну что ж. В общем, здесь на лубочно-клюквенном языке мы и закончим. Это тебе не сказка и даже не быль. Это кошмар, в котором тебе не повезло оказаться.`},
         actions: {
 
+        }
+    },
+    storyCard2: {
+        get text () { return `Ты находишь в темной бревенчатой комнате, единственный свет – из узкого, как бойница, окна, через который видно краешек серой хмари. В нос бьет сильный запах плесени и влажного мха, который утыкан между старыми потемневшими брёвнами. По центру стоит печь, достаточно большая, чтобы туда поместился человек, но чья кладка рассыпается как будто прямо на глазах, обнажая тёмное и пугающее нутро. Также видна дверь, к которой можно подойти.`},
+        actions: {
             get names () {
                 this.lookAround._name = "Оглядеться";
                 this.comeToDoor._name = "Подойти к двери"; 
