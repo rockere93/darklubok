@@ -73,17 +73,21 @@ body {
     padding: 0;
     background: url(img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
     background-size: cover;
-}
+    }
+
+
 
 .mainfield {
-    max-width: 800px;
-    min-height: 800px;
+    width: 1010px;
+    min-height: 95vh;
     padding: 134px 100px;
     font-size: 36px;
     color: rgba(59, 36, 36, 0.0);
     background: url(img/svitok.png), no-repeat;
     background-size: cover;
-    margin: 30px auto;
+    background-position: center top;
+    margin: 30px auto 0px;
+    
 }
 
 .textCard {
@@ -91,9 +95,18 @@ body {
 }
 
 .animation {
-        color:rgb(59, 36, 36, 1);
-        transition-property: color;
-        transition-duration: 3s;
+    transition-duration: 2s;
+    transition-property: color;
+    color: rgba(59, 36, 36, 1);
+    
+}
+
+.darkAnimation {
+    transition-property: filter;
+    transition-duration: 5s;
+    transition-delay: 1s;
+    color: rgb(201, 116, 116);
+    filter: invert(0.1) brightness(0.6) contrast(4.7);
 }
 
 .buttons {
@@ -108,7 +121,6 @@ body {
     min-width: 20px;
     font-size: 36px;
     margin-top: 20px;
-    background-color: rgb(255, 255, 255, 0.3);
     cursor: pointer;
 }
 
