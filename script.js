@@ -1,5 +1,5 @@
 'use strict'
-
+alert("Начинаем игру!")
 
 let textCard = document.querySelector('.textCard')
 let buttonsBlock = document.querySelector('.buttons');
@@ -14,21 +14,20 @@ let player = {
 /* ________Служебные функции______________ */
 
 document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(() => mainField.classList.add('animation'), 1000)
+    setTimeout(() => mainField.classList.add('animationText'), 1000)
 });
 
 function animationText() {
-    if (mainField.classList.contains('animation')) {
-        mainField.classList.remove('animation')
+    if (mainField.classList.contains('animationText')) {
+        mainField.classList.remove('animationText')
     };
-    setTimeout(() => mainField.classList.add('animation'), 1000)
+    setTimeout(() => mainField.classList.add('animationText'), 1000)
 }
 
 function animationDark () {
-    if (mainField.classList.contains('darkAnimation')) {
-        mainField.classList.remove('darkAnimation');
+    if (!mainField.classList.contains('darkAnimation')) {
+    setTimeout(() => mainField.classList.add('darkAnimation'), 2000)
     }
-    setTimeout(() => mainField.classList.add('darkAnimation'), 1000)
 }
 
 function makeButton(name, func) {

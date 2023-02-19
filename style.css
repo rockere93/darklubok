@@ -82,31 +82,32 @@ body {
     min-height: 95vh;
     padding: 134px 100px;
     font-size: 36px;
-    color: rgba(59, 36, 36, 0.0);
+    color: rgba(59, 36, 36);
     background: url(img/svitok.png), no-repeat;
     background-size: cover;
     background-position: center top;
     margin: 30px auto 0px;
-    
+    opacity: 0;
 }
 
 .textCard {
     margin-bottom: 15px;
 }
 
-.animation {
-    transition-duration: 2s;
-    transition-property: color;
-    color: rgba(59, 36, 36, 1);
-    
+.animationText {
+    transition-property: opacity !important;
+    transition-duration: 2s !important;
+    opacity: 1 !important;
 }
 
 .darkAnimation {
-    transition-property: filter;
+    transition-property: filter, color,  -webkit-text-stroke;
     transition-duration: 5s;
     transition-delay: 1s;
-    color: rgb(201, 116, 116);
+    -webkit-text-stroke: 1px #ff9e9e;
+    color: rgb(148, 0, 0);
     filter: invert(0.1) brightness(0.6) contrast(4.7);
+    opacity: 0;
 }
 
 .buttons {
