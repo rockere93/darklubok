@@ -1,6 +1,4 @@
 'use strict'
-alert("Начинаем игру!")
-
 let textCard = document.querySelector('.textCard')
 let buttonsBlock = document.querySelector('.buttons');
 let mainField = document.querySelector('.mainField');
