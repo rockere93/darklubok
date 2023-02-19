@@ -3,7 +3,8 @@ alert("Начинаем игру!")
 
 let textCard = document.querySelector('.textCard')
 let buttonsBlock = document.querySelector('.buttons');
-let mainField = document.querySelector('.mainfield')
+let mainField = document.querySelector('.mainField');
+let mainFieldBody = document.querySelector('.mainFieldBody')
 let player = {
     name: '',
     gender: '',
@@ -14,14 +15,14 @@ let player = {
 /* ________Служебные функции______________ */
 
 document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(() => mainField.classList.add('animationText'), 1000)
+    setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
 });
 
 function animationText() {
-    if (mainField.classList.contains('animationText')) {
-        mainField.classList.remove('animationText')
+    if (mainFieldBody.classList.contains('animationText')) {
+        mainFieldBody.classList.remove('animationText')
     };
-    setTimeout(() => mainField.classList.add('animationText'), 1000)
+    setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
 }
 
 function animationDark () {
