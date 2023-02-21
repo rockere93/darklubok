@@ -1,6 +1,4 @@
 'use strict'
-alert("Начинаем игру!")
-
 let textCard = document.querySelector('.textCard')
 let buttonsBlock = document.querySelector('.buttons');
 let mainField = document.querySelector('.mainField');
@@ -25,12 +23,6 @@ function animationText() {
     setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
 }
 
-function animationDark () {
-    if (!mainField.classList.contains('darkAnimation')) {
-    setTimeout(() => mainField.classList.add('darkAnimation'), 2000)
-    }
-}
-
 function makeButton(name, func) {
     let button = document.createElement('div');
     button.classList.add('button');
@@ -39,8 +31,19 @@ function makeButton(name, func) {
     return button
 }
 
-/* ________Сюжет______________ */
+function goToStoryCard(storyCard) {
+    animationText();
+    textCard.innerHTML = ' ' + `${storyCard.text}`;
+    buttonsBlock.innerHTML = ' ';
+    let buttonsArray = storyCard.buttons;
+    for (let button of buttonsArray) {
+        let newButton = makeButton(button.nameButton, button.functionButton);
+        buttonsBlock.append(newButton);
+    };
+}
 
+/* ________Сюжет______________ */
+/*
 let story = {
     goToStoryCard(storyCard) {
         animationText();
@@ -208,4 +211,4 @@ let story = {
 
 }
 
-
+*/
