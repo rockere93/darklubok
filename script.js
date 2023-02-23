@@ -31,11 +31,11 @@ function animationText() {
     setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
 }
 
-function makeButton(name, func) {
+function makeButton(name, func, arg) {
     let button = document.createElement('div');
     button.classList.add('button');
     button.textContent = `${name}`;
-    button.onclick = func;
+    button.onclick = () => func(...arg);
     return button
 }
 
@@ -45,12 +45,13 @@ function goToStoryCard(storyCard) {
     buttonsBlock.innerHTML = ' ';
     let buttonsArray = storyCard.buttons;
     for (let button of buttonsArray) {
-        let newButton = makeButton(button.nameButton, button.functionButton);
+        let array = [];
+        if (button.arg) array = button.arg;
+        console.log(array)      
+        let newButton = makeButton(button.nameButton, button.functionButton, array);
         buttonsBlock.append(newButton);
     };
 }
 
 dowloadChapterScript ('story/intro/intro.js', 'Вступление');
 
-player.health = 10;
-console.log(player)
