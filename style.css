@@ -130,3 +130,15 @@ body {
 .button:hover {
     color: rgb(160, 12, 12);
 }
+
+#inputName {
+    background: none;
+    outline: none;
+    width: 200px;
+    margin-top: 20px;
+    font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
+    font-size: 36px;
+    color: rgba(59, 36, 36);
+    flex-grow: 2;
+    
+}
