@@ -1,4 +1,9 @@
 'use strict'
+const textCard = document.querySelector('.textCard')
+const buttonsBlock = document.querySelector('.buttons');
+const mainField = document.querySelector('.mainField');
+const mainFieldBody = document.querySelector('.mainFieldBody')
+const player = {
     name: '',
     gender: '',
     inventory: [],
@@ -7,9 +12,17 @@
 
 /* ________Служебные функции______________ */
 
-document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
-});
+function dowloadChapterScript (pathToChapter, nameChapter) {
+    let startScript = document.createElement('script');
+    startScript.src = pathToChapter;
+    document.body.append(startScript);
+    startScript.onload = function () {
+    alert(nameChapter)
+};
+    startScript.onerror = function () {
+    alert('Ошибка загрузки ' + this.src)
+}
+}
 
 function animationText() {
     if (mainFieldBody.classList.contains('animationText')) {
