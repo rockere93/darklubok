@@ -1,28 +1,46 @@
 'use strict'
-function chooseSex() {
-    player.gender = "Добрый молодец";
+function chooseSex(gender) {
+    player.gender = gender;
     goToStoryCard(introCard1);
+    addInputName ();
+}
+
+function addInputName () {
+    let input = document.createElement('input');
+    input.id = "inputName";
+    input.placeholder = "Нажмите сюда, чтобы ввести имя";
+    buttonsBlock.prepend(input);
+}
+
+function agreeName () {
+    let input = buttonsBlock.querySelector('input');
+    player.name = input.value;
+    goToStoryCard(introCard2);
     animationDark();
 }
 
 
+
+function goToNextChapter () {
+    dowloadChapterScript ('story/chapter1/chapter1.js', 'Глава 1');
+}
 
 function buttonsfi () {
     alert("затычка")}
 
 const introCard0 = {
     get text() { 
-        return `Приветствую тебя, добрый молодец! Али ты девица красная? Подслеповат я к старости стал уж не серчай на старика.`},
+        return `Приветствую тебя, добрый молодец! Али ты девица красная? Подслеповат я к старости стал, уж не серчай на старика.`},
     buttons: [
         {
             nameButton: 'Добрый молодец',
             functionButton: chooseSex,
-            arguments: 'Добрый молодец',
+            arg: ['Добрый молодец',],
         },
         {
             nameButton: 'Красна девица',
             functionButton: chooseSex,
-            arguments: 'Красна девица',
+            arg: ['Красна девица',],
         },
     ]
 }
@@ -33,8 +51,8 @@ const introCard1 = {
         return `${player.gender} значит. Ну а зовут-то тебя как?`},
     buttons: [
         {
-            nameButton: 'Продолжить',
-            functionButton: buttonsfi,
+            nameButton: 'Подтвердить',
+            functionButton: agreeName,
         },
     ]
 };
@@ -47,7 +65,7 @@ const introCard2 = {
     buttons: [
         {
             nameButton: 'Продолжить',
-            functionButton: buttonsfi,
+            functionButton: goToNextChapter,
         },
     ]
 };

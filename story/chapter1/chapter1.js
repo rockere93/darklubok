@@ -1,11 +1,5 @@
 'use strict'
 
-function animationDark () {
-    if (!mainField.classList.contains('darkAnimation')) {
-    setTimeout(() => mainField.classList.add('darkAnimation'), 2000)
-    }
-}
-
 function goToNext() {
     goToStoryCard(storyCard2);
 }
@@ -120,3 +114,5 @@ const storyCard6 = {
         },
     ]
 }
+
+goToStoryCard(storyCard0)
