@@ -71,7 +71,7 @@ body {
     font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url(img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
+    background: url(story/intro/img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
     background-size: cover;
     }
 
@@ -83,7 +83,7 @@ body {
     padding: 134px 100px;
     font-size: 36px;
     color: rgba(59, 36, 36);
-    background: url(img/svitok.png), no-repeat;
+    background: url(story/intro/img/svitok.png), no-repeat;
     background-size: cover;
     background-position: center top;
     margin: 30px auto 0px;
