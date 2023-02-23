@@ -20,6 +20,11 @@ function agreeName () {
 }
 
 
+function animationDark () {
+    if (!mainField.classList.contains('darkAnimation')) {
+    setTimeout(() => mainField.classList.add('darkAnimation'), 2000)
+    }
+}
 
 function goToNextChapter () {
     dowloadChapterScript ('story/chapter1/chapter1.js', 'Глава 1');
