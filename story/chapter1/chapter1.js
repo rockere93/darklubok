@@ -5,7 +5,7 @@ function goToNext() {
 }
 
 function lookAround() {
-    goToStoryCard(storyCard3);
+    goToStoryCard(storyCard1);
 }
 
 function inspectOven() {
@@ -23,7 +23,6 @@ function takeFragments() {
 function takeRoundedObject() {
     goToStoryCard(storyCard6);
     player.inventory.push({ name: 'Амулет с надписью "Алёна"', });
-    console.log(player.inventory)
 }
 
 function leaveOven() {
@@ -32,11 +31,12 @@ function leaveOven() {
 
 const storyCard0 = {
     get text() { 
-        return `Ты находишь в темной бревенчатой комнате, единственный свет - из узкого, как бойница, окна, через который видно краешек серой хмари. В нос бьет сильный запах плесени и влажного мха, который утыкан между старыми потемневшими брёвнами. По центру стоит печь, достаточно большая, чтобы туда поместился человек, но чья кладка рассыпается как будто прямо на глазах, обнажая тёмное и пугающее нутро. Также видна дверь, к которой можно подойти.` },
+        return `Ты находишь в темной бревенчатой комнате, единственный свет – из узкого, как бойница, окна, через который видно краешек серой хмари. В нос бьет сильный запах плесени и влажного мха, который утыкан между старыми потемневшими брёвнами. По центру стоит печь, достаточно большая, чтобы туда поместился человек, но чья кладка рассыпается как будто прямо на глазах, обнажая тёмное и пугающее нутро. Возле стен свалены кучи какого-то хлама. Также видна массивная дверь, неровно примыкающая к косяку.` },
     buttons: [
         {
             nameButton: 'Оглядеться',
-            functionButton: lookAround,
+            functionButton: goToStoryCard,
+            arg: [storyCard1,],
         },
         {
             nameButton: 'Осмотреть печь',
@@ -49,7 +49,7 @@ const storyCard0 = {
     ]
 }
 
-const storyCard1 = {
+var storyCard1 = {
     get text() {
         return `Вы старательно осматриваете комнату, но видите только кучи разломанной деревянной мебели и посуды, какие-то ржавые куски металла. Ничего полезного.`
     },
@@ -84,7 +84,6 @@ const storyCard4 = {
         {
             nameButton: 'Отойти от печи',
             functionButton: leaveOven,
-
         },
     ]
 }
@@ -115,4 +114,68 @@ const storyCard6 = {
     ]
 }
 
-goToStoryCard(storyCard0)
+
+
+function goTo (array, id) {
+    console.log(array[id])
+    animationText();
+    textCard.innerHTML = ' ' + `${array[id].text}`;
+    buttonsBlock.innerHTML = ' ';
+    let buttonsArray = array[id].buttons;
+    for (let button of buttonsArray) {
+        let buttonsArray = [];
+        if (button.arg) { buttonsArray = button.arg}  
+        let newButton = makeButton(button.nameButton, button.functionButton, array, buttonsArray);
+        buttonsBlock.append(newButton);
+    };
+}
+
+function test () {
+    console.log(this)
+}
+
+let story = [
+    {
+        name: 'storyCard0',
+        get text () {
+        return 'История номер 1'
+    },
+        buttons: [
+            {
+            nameButton: "Действие 1",
+            functionButton: goTo,
+            arg: [1],
+            }
+    ]
+    }, 
+    {
+        name: 'storyCard1',
+            get text () {
+               return 'История номер 2'
+            },
+            buttons: [
+            {
+                nameButton: "Действие 2",
+                functionButton: lookAround,
+            }
+        ]
+        
+    },
+    {
+        name: 'storyCard2',
+            get text () {
+               return 'История номер 3'
+            },
+            buttons: [
+            {
+                nameButton: "Действие 3",
+                functionButton: goTo,
+                arg: [0],
+            }
+        ]
+        
+    }
+]
+
+goTo (story, 0)
+

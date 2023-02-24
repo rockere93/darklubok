@@ -31,27 +31,29 @@ function animationText() {
     setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
 }
 
-function makeButton(name, func, arg) {
+function makeButton(name, func, contex, arg) {
     let button = document.createElement('div');
     button.classList.add('button');
     button.textContent = `${name}`;
-    button.onclick = () => func(...arg);
+    button.onclick = function () {func(contex, ...arg)};
     return button
 }
 
 function goToStoryCard(storyCard) {
+    console.log(storyCard)
     animationText();
     textCard.innerHTML = ' ' + `${storyCard.text}`;
     buttonsBlock.innerHTML = ' ';
     let buttonsArray = storyCard.buttons;
     for (let button of buttonsArray) {
         let array = [];
-        if (button.arg) array = button.arg;
-        console.log(array)      
-        let newButton = makeButton(button.nameButton, button.functionButton, array);
+        if (button.arg) array = button.arg;  
+        let newButton = makeButton(button.nameButton, button.functionButton, array, storyCard);
         buttonsBlock.append(newButton);
     };
 }
 
-dowloadChapterScript ('story/intro/intro.js', 'Вступление');
 
+
+//dowloadChapterScript ('story/intro/intro.js', 'Вступление');
+dowloadChapterScript ('story/chapter1/chapter1.js', 'Глава 1')
