@@ -31,11 +31,11 @@ function animationText() {
     setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
 }
 
-function makeButton(name, func, contex, arg) {
+function makeButton(name, func, ...arg) {
     let button = document.createElement('div');
     button.classList.add('button');
     button.textContent = `${name}`;
-    button.onclick = function () {func(contex, ...arg)};
+    button.onclick = function () {func(...arg)};
     return button
 }
 
@@ -45,17 +45,24 @@ function goToStoryCard(array, index) {
     buttonsBlock.innerHTML = ' ';
     let buttonsArray = array[index].buttons;
     for (let button of buttonsArray) {
-        let buttonsArray = []
-        if (button.arg) { buttonsArray = button.arg}  
-        let newButton = makeButton(button.nameButton, button.functionButton, array, buttonsArray);
-        buttonsBlock.append(newButton);
+        let argArray = [];
+        let newButton;
+        if (button.arg) { argArray = button.arg };
+        if (button.functionButton.name === 'goToStoryCard') {
+            newButton = makeButton(button.nameButton, button.functionButton, array, ...argArray);
+        } else {
+            newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
+
+        }
+        buttonsBlock.append(newButton)
     };
 }
+
 
 function deleteCardButton (arrayButtons, buttonName) {
     let index = arrayButtons.findIndex((button) => button.nameButton === buttonName);
     if (index > -1) arrayButtons.splice(index, 1)
 }
 
-//dowloadChapterScript ('story/intro/intro.js', 'Вступление');
-dowloadChapterScript ('story/chapter1/chapter1.js', 'Глава 1')
+dowloadChapterScript ('story/intro/intro.js', 'Вступление');
+
