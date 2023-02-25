@@ -39,21 +39,23 @@ function makeButton(name, func, contex, arg) {
     return button
 }
 
-function goToStoryCard(storyCard) {
-    console.log(storyCard)
+function goToStoryCard(array, index) {
     animationText();
-    textCard.innerHTML = ' ' + `${storyCard.text}`;
+    textCard.innerHTML = ' ' + `${array[index].text}`;
     buttonsBlock.innerHTML = ' ';
-    let buttonsArray = storyCard.buttons;
+    let buttonsArray = array[index].buttons;
     for (let button of buttonsArray) {
-        let array = [];
-        if (button.arg) array = button.arg;  
-        let newButton = makeButton(button.nameButton, button.functionButton, array, storyCard);
+        let buttonsArray = []
+        if (button.arg) { buttonsArray = button.arg}  
+        let newButton = makeButton(button.nameButton, button.functionButton, array, buttonsArray);
         buttonsBlock.append(newButton);
     };
 }
 
-
+function deleteCardButton (arrayButtons, buttonName) {
+    let index = arrayButtons.findIndex((button) => button.nameButton === buttonName);
+    if (index > -1) arrayButtons.splice(index, 1)
+}
 
 //dowloadChapterScript ('story/intro/intro.js', 'Вступление');
 dowloadChapterScript ('story/chapter1/chapter1.js', 'Глава 1')
