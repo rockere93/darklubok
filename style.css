@@ -80,13 +80,13 @@ body {
 .mainField {
     width: 1010px;
     min-height: 95vh;
-    padding: 134px 100px;
+    padding: 135px 135px;
     font-size: 36px;
     color: rgba(59, 36, 36);
-    background: url(story/intro/img/svitok.png), no-repeat;
-    background-size: cover;
-    background-position: center top;
-    margin: 30px auto 0px;
+    background: url(story/intro/img/svitok2.png), no-repeat;
+    background-size: inherit;
+    background-position: center;
+    margin: 0px auto ;
 }
 
 .mainFieldBody {
@@ -134,7 +134,7 @@ body {
 #inputName {
     background: none;
     outline: none;
-    width: 200px;
+    width: 100%;
     margin-top: 20px;
     font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
     font-size: 36px;
