@@ -12,12 +12,17 @@ const player = {
 
 /* ________Служебные функции______________ */
 
+
+function getRandomInteger(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+
 function dowloadChapterScript (pathToChapter, nameChapter) {
     let startScript = document.createElement('script');
     startScript.src = pathToChapter;
     document.body.append(startScript);
     startScript.onload = function () {
-    alert(nameChapter)
 };
     startScript.onerror = function () {
     alert('Ошибка загрузки ' + this.src)
@@ -64,5 +69,9 @@ function deleteCardButton (arrayButtons, buttonName) {
     if (index > -1) arrayButtons.splice(index, 1)
 }
 
-dowloadChapterScript ('story/intro/intro.js', 'Вступление');
+/* ________Служебные функции______________ */
 
+
+
+//dowloadChapterScript ('story/intro/intro.js', 'Вступление');
+dowloadChapterScript('story/chapter1/chapter1.js', 'Глава 1');
