@@ -1,5 +1,71 @@
 'use strict'
 
+const gus = {
+    name: "Гусь-лебедь",
+    description: '',
+    health: 5,
+    actions: [
+        {
+            name: "щипок",
+            set text (value) {
+                this._text = value
+            },
+            get text () {
+                if (this._text === 0) return 'Гусь промахнулся';
+                return `Гусь-лебедь, словно змея, резко выбросил свою головув и сильно ущипнул вас. Получено ${this._text} урона`
+
+            },
+            get attack () {
+                return getRandomInteger(0,5)
+            }
+        },
+        {
+            name: "удар крылом",
+            set text (value) {
+                this._text = value
+            },
+            get text () {
+                if (this._text === 0) return 'Гусь промахнулся';
+                return `Гусь-лебедь привстает на лапах и начинает хлестать вас своими крыльями. Вы получаете ${this._text} урона`
+
+            },
+            get attack () {
+                return getRandomInteger(0,5)
+            }
+        },
+        {
+            name: "удар в полете",
+            set text (value) {
+                this._text = value
+            },
+            get text () {
+                if (this._text === 0) return 'Гусь промахнулся';
+                return `Взлетев перед вами, он обрушивает всю мощь своих перепончатых лап, раздирая вашу кожу. Вы получаете ${this._text} урона`
+
+            },
+            get attack () {
+                return getRandomInteger(0,5)
+            }
+        }
+    ]
+}
+
+function attackGus(index) {
+    alert(gus.actions[index].name)
+
+} 
+
+function fight (index) {
+    let damage = gus.actions[index].attack;
+    gus.actions[index].text = damage;
+    alert(gus.actions[index].text)
+}
+
+while (true) {
+    let random = getRandomInteger(0,2)
+    fight(random)
+}
+
 const part1 = [
     {
         name: 'storyCard0',
