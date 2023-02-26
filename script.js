@@ -7,6 +7,38 @@ const player = {
     name: '',
     gender: '',
     inventory: [],
+    health: 25,
+    actions: [
+        {
+            name: "удар рукой",
+            set text (value) {
+                this._text = value
+            },
+            get text () {
+                if (this._text === 0) return 'Вы промахнулись';
+                return `Вы тыкаете кулаком по противнику. Он получает ${this._text} урона`
+
+            },
+            get attack () {
+                return getRandomInteger(0,5)
+            }
+        },
+        {
+            name: "пинок",
+            set text (value) {
+                this._text = value
+            },
+            get text () {
+                if (this._text === 0) return 'Вы промахнулись';
+                return `Удар ногой наносит ${this._text} урона`
+
+            },
+            get attack () {
+                return getRandomInteger(0,5)
+            }
+        },
+        
+    ]
 }
 
 
