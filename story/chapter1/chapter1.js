@@ -2,49 +2,50 @@
 
 const gus = {
     name: "Гусь-лебедь",
+    img: '',
     description: '',
     health: 5,
     actions: [
         {
             name: "щипок",
-            set text (value) {
+            set text(value) {
                 this._text = value
             },
-            get text () {
+            get text() {
                 if (this._text === 0) return 'Гусь промахнулся';
                 return `Гусь-лебедь, словно змея, резко выбросил свою головув и сильно ущипнул вас. Получено ${this._text} урона`
 
             },
-            get attack () {
-                return getRandomInteger(0,5)
+            get attack() {
+                return getRandomInteger(0, 5)
             }
         },
         {
             name: "удар крылом",
-            set text (value) {
+            set text(value) {
                 this._text = value
             },
-            get text () {
+            get text() {
                 if (this._text === 0) return 'Гусь промахнулся';
                 return `Гусь-лебедь привстает на лапах и начинает хлестать вас своими крыльями. Вы получаете ${this._text} урона`
 
             },
-            get attack () {
-                return getRandomInteger(0,5)
+            get attack() {
+                return getRandomInteger(0, 5)
             }
         },
         {
             name: "удар в полете",
-            set text (value) {
+            set text(value) {
                 this._text = value
             },
-            get text () {
+            get text() {
                 if (this._text === 0) return 'Гусь промахнулся';
                 return `Взлетев перед вами, он обрушивает всю мощь своих перепончатых лап, раздирая вашу кожу. Вы получаете ${this._text} урона`
 
             },
-            get attack () {
-                return getRandomInteger(0,5)
+            get attack() {
+                return getRandomInteger(0, 5)
             }
         }
     ]
@@ -53,18 +54,15 @@ const gus = {
 function attackGus(index) {
     alert(gus.actions[index].name)
 
-} 
+}
 
-function fight (index) {
+function fight(index) {
     let damage = gus.actions[index].attack;
     gus.actions[index].text = damage;
     alert(gus.actions[index].text)
 }
 
-while (true) {
-    let random = getRandomInteger(0,2)
-    fight(random)
-}
+
 
 const part1 = [
     {
@@ -236,6 +234,20 @@ const part1 = [
 
 function openLockerDoor() {
     player.inventory.push({ name: 'Старый кухонный нож', });
+    player.actions.push({
+        name: "Старый кухонный нож",
+        set text(value) {
+            this._text = value
+        },
+        get text() {
+            if (this._text === 0) return 'ВЫ промахнулись';
+            return `Вы бьете ножом, как умеете и наносите ${this._text} урона`
+
+        },
+        get attack() {
+            return getRandomInteger(0, 10)
+        }
+    });
     deleteCardButton(part1[0].buttons, 'Оглядеться');
     goToStoryCard(part1, 2)
 }
@@ -251,15 +263,15 @@ function takeRoundedObject() {
     deleteCardButton(part1[3].buttons, 'Вытащить округлый предмет');
     goToStoryCard(part1, 4);
     player.inventory.push({ name: 'Амулет с надписью "Алёна"', });
-    
+
 }
 
-function tryOpenDoor () {
+function tryOpenDoor() {
     deleteCardButton(part1[6].buttons, 'Попытаться открыть дверь');
     goToStoryCard(part1, 7)
 }
 
-function endPart1 () {
+function endPart1() {
     alert('Поздравляю!')
 }
 
