@@ -78,19 +78,19 @@ body {
 
 
 .mainField {
-    width: 1010px;
-    min-height: 95vh;
-    padding: 135px 135px;
-    font-size: 36px;
+    max-width: 107vh;
+    min-height: 88vh;
+    font-size: 3.5vh;
     color: rgba(59, 36, 36);
-    background: url(story/intro/img/svitok2.png), no-repeat;
+    background: url(story/intro/img/svitok1.png), no-repeat;
     background-size: inherit;
-    background-position: center;
-    margin: 0px auto ;
+    background-position: center top;
+    margin: 20px auto ;
 }
 
 .mainFieldBody {
     opacity: 0;
+    padding: 7vh 14vh;
 }
 
 .textCard {
@@ -122,7 +122,6 @@ body {
 .button {
     min-height: 20px;
     min-width: 20px;
-    font-size: 36px;
     margin-top: 20px;
     cursor: pointer;
 }
