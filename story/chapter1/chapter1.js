@@ -4,65 +4,44 @@ const gus = {
     name: "Гусь-лебедь",
     img: '',
     description: '',
-    health: 5,
-    actions: [
+    health: 15,
+    attacks: [
         {
             name: "щипок",
-            set text(value) {
-                this._text = value
+            get damagePoints() {
+                this._damage = getRandomInteger(0, 5);
+                return this._damage
             },
             get text() {
-                if (this._text === 0) return 'Гусь промахнулся';
-                return `Гусь-лебедь, словно змея, резко выбросил свою головув и сильно ущипнул вас. Получено ${this._text} урона`
+                if (this._damage === 0) return 'Гусь промахнулся';
+                return `Гусь-лебедь, словно змея, резко выбросил свою головув и сильно ущипнул вас. Получено ${this._damage} урона`
 
             },
-            get attack() {
-                return getRandomInteger(0, 5)
-            }
         },
         {
-            name: "удар крылом",
-            set text(value) {
-                this._text = value
-            },
             get text() {
-                if (this._text === 0) return 'Гусь промахнулся';
-                return `Гусь-лебедь привстает на лапах и начинает хлестать вас своими крыльями. Вы получаете ${this._text} урона`
+                if (this._damage === 0) return 'Гусь промахнулся';
+                return `Гусь-лебедь привстает на лапах и начинает хлестать вас своими крыльями. Вы получаете ${this._damage} урона`
 
             },
-            get attack() {
-                return getRandomInteger(0, 5)
+            get damagePoints() {
+                this._damage = getRandomInteger(0, 5);
+                return this._damage
             }
         },
         {
             name: "удар в полете",
-            set text(value) {
-                this._text = value
-            },
             get text() {
-                if (this._text === 0) return 'Гусь промахнулся';
-                return `Взлетев перед вами, он обрушивает всю мощь своих перепончатых лап, раздирая вашу кожу. Вы получаете ${this._text} урона`
-
+                if (this._damage === 0) return 'Гусь промахнулся';
+                return `Взлетев перед вами, он обрушивает всю мощь своих перепончатых лап, раздирая вашу кожу. Вы получаете ${this._damage} урона`
             },
-            get attack() {
-                return getRandomInteger(0, 5)
-            }
+            get damagePoints () {
+                this._damage = getRandomInteger(0, 5)
+                return this._damage
+            },            
         }
     ]
 }
-
-function attackGus(index) {
-    alert(gus.actions[index].name)
-
-}
-
-function fight(index) {
-    let damage = gus.actions[index].attack;
-    gus.actions[index].text = damage;
-    alert(gus.actions[index].text)
-}
-
-
 
 const part1 = [
     {
@@ -249,19 +228,17 @@ const part2 = [{
 
 function openLockerDoor() {
     player.inventory.push({ name: 'Старый кухонный нож', });
-    player.actions.push({
+    player.attacks.push({
         name: "Старый кухонный нож",
-        set text(value) {
-            this._text = value
+        get damagePoints() {
+            this._damage = getRandomInteger(0, 5);
+            return this._damage
         },
         get text() {
-            if (this._text === 0) return 'ВЫ промахнулись';
-            return `Вы бьете ножом, как умеете и наносите ${this._text} урона`
+            if (this._damage === 0) return 'ВЫ промахнулись';
+            return `Вы бьете ножом, как умеете и наносите ${this._damage} урона`
 
         },
-        get attack() {
-            return getRandomInteger(0, 10)
-        }
     });
     deleteCardButton(part1[0].buttons, 'Оглядеться');
     goToStoryCard(part1, 2)
@@ -287,8 +264,8 @@ function tryOpenDoor() {
 }
 
 function endPart1() {
-    alert('Поздравляю!')
+    goToStoryCard(part2, 0)
 }
 
 goToStoryCard(part1, 0)
-
+animationText()

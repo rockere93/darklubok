@@ -8,34 +8,30 @@ const player = {
     gender: '',
     inventory: [],
     health: 25,
-    actions: [
+    attacks: [
         {
-            name: "удар рукой",
-            set text (value) {
-                this._text = value
+            name: "Удар рукой",
+            get damagePoints() {
+                this._damage = getRandomInteger(0, 5);
+                return this._damage
             },
             get text () {
-                if (this._text === 0) return 'Вы промахнулись';
-                return `Вы тыкаете кулаком по противнику. Он получает ${this._text} урона`
+                if (this._damage === 0) return 'Вы промахнулись';
+                return `Вы тыкаете кулаком по противнику. Он получает ${this._damage} урона`
 
             },
-            get attack () {
-                return getRandomInteger(0,5)
-            }
         },
         {
-            name: "пинок",
-            set text (value) {
-                this._text = value
+            name: "Пинок",
+            get damagePoints() {
+                this._damage = getRandomInteger(0, 5);
+                return this._damage
             },
             get text () {
-                if (this._text === 0) return 'Вы промахнулись';
-                return `Удар ногой наносит ${this._text} урона`
+                if (this._damage === 0) return 'Вы промахнулись';
+                return `Удар ногой наносит ${this._damage} урона`
 
             },
-            get attack () {
-                return getRandomInteger(0,5)
-            }
         },
         
     ]
