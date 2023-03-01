@@ -97,9 +97,40 @@ function deleteCardButton (arrayButtons, buttonName) {
     if (index > -1) arrayButtons.splice(index, 1)
 }
 
-/* ________Служебные функции______________ */
+/* ________Бой______________ */
 
+function hitDamage (subject, object, indexAttack) {
+    object.health -= subject.attacks[indexAttack].damagePoints;
+    textCard.innerHTML += `<p>${subject.attacks[indexAttack].text}. ` + `Ваше здоровье:${object.health}</p>`; // подумать как выводить здоровье.
+};
 
+function PlayerAttack (player, enemy, indexAttack ) {
+    hitDamage (player, enemy, indexAttack);
+    buttonsBlock.innerHTML = ' ';
+    fightRound (player, enemy);
+};
+
+function fightRound(player, enemy) {
+    if (player.health > 0 && enemy.health > 0) {
+        let indexAttack = getRandomInteger(0, enemy.attacks.length - 1)
+        hitDamage(enemy, player, indexAttack);
+        
+        for (let i = 0; i < player.attacks.length; i++) {
+            console.log(player.attacks[i].name)
+            let newButton = makeButton(player.attacks[i].name, PlayerAttack, player, enemy, i);
+            buttonsBlock.append(newButton)
+        }
+    } else {
+        alert("Кто-то умер, надеюсь, что не ты!")
+    }
+}
+
+function goToFight (player, enemy) {
+    textCard.innerHTML = ' ';
+    buttonsBlock.innerHTML = ' ';
+    textCard.innerHTML += `Деваться некуда, на вас нападает ${gus.name}`;
+    fightRound (player, enemy);
+}
 
 //dowloadChapterScript ('story/intro/intro.js', 'Вступление');
 dowloadChapterScript('story/chapter1/chapter1.js', 'Глава 1');
