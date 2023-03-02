@@ -57,11 +57,11 @@ function dowloadChapterScript (pathToChapter, nameChapter) {
 }
 }
 
-function animationText() {
-    if (mainFieldBody.classList.contains('animationText')) {
-        mainFieldBody.classList.remove('animationText')
+function animationText(divClass, ms) {
+    if (divClass.classList.contains('animationText')) {
+        divClass.classList.remove('animationText')
     };
-    setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
+    setTimeout(() => divClass.classList.add('animationText'), ms)
 }
 
 function makeButton(name, func, ...arg) {
@@ -73,7 +73,7 @@ function makeButton(name, func, ...arg) {
 }
 
 function goToStoryCard(array, index) {
-    animationText();
+    animationText(mainFieldBody, 1000);
     textCard.innerHTML = ' ' + `${array[index].text}`;
     buttonsBlock.innerHTML = ' ';
     let buttonsArray = array[index].buttons;

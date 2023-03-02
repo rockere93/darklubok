@@ -78,4 +78,4 @@ function goToNextChapter() {
 }
 
 goToStoryCard(intro, 0);
-setTimeout(() => mainFieldBody.classList.add('animationText'), 1000)
+mainFieldBody.classList.add('animationText', 1000)

@@ -269,3 +269,4 @@ function endPart1() {
 
 goToStoryCard(part1, 0)
 animationText()
+animationText(mainFieldBody, 1000)
