@@ -267,6 +267,6 @@ function endPart1() {
     goToStoryCard(part2, 0)
 }
 
-goToStoryCard(part1, 0)
-animationText()
-animationText(mainFieldBody, 1000)
+//goToStoryCard(part1, 0)
+goToFight(player, gus)
+//animationText(mainFieldBody, 1000)

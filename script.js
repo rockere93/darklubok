@@ -101,7 +101,12 @@ function deleteCardButton (arrayButtons, buttonName) {
 
 function hitDamage (subject, object, indexAttack) {
     object.health -= subject.attacks[indexAttack].damagePoints;
-    textCard.innerHTML += `<p>${subject.attacks[indexAttack].text}. ` + `Ваше здоровье:${object.health}</p>`; // подумать как выводить здоровье.
+    let fightString = document.createElement('p');
+    fightString.textContent = `${subject.attacks[indexAttack].text}. ` + `Осталось здоровья:${object.health}`
+    fightString.classList.add('fightString', '_opacityZero');
+    textCard.append(fightString);
+    fightString = mainFieldBody.querySelector('.textCard > p:last-child')
+    animationText(fightString, 1000)
 };
 
 function PlayerAttack (player, enemy, indexAttack ) {
@@ -113,12 +118,13 @@ function PlayerAttack (player, enemy, indexAttack ) {
 function fightRound(player, enemy) {
     if (player.health > 0 && enemy.health > 0) {
         let indexAttack = getRandomInteger(0, enemy.attacks.length - 1)
-        hitDamage(enemy, player, indexAttack);
+        setTimeout(() => hitDamage(enemy, player, indexAttack), 1000);
         
         for (let i = 0; i < player.attacks.length; i++) {
             console.log(player.attacks[i].name)
             let newButton = makeButton(player.attacks[i].name, PlayerAttack, player, enemy, i);
             buttonsBlock.append(newButton)
+            animationText(buttonsBlock)
         }
     } else {
         alert("Кто-то умер, надеюсь, что не ты!")
@@ -126,9 +132,13 @@ function fightRound(player, enemy) {
 }
 
 function goToFight (player, enemy) {
+    mainFieldBody.classList.remove('_opacityZero');
     textCard.innerHTML = ' ';
     buttonsBlock.innerHTML = ' ';
-    textCard.innerHTML += `Деваться некуда, на вас нападает ${gus.name}`;
+    let fightHead = document.createElement('div');
+    fightHead.classList.add('fightHead');
+    fightHead.textContent = `БОЙ`;
+    textCard.append(fightHead);
     fightRound (player, enemy);
 }
 
