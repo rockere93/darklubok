@@ -4,7 +4,7 @@ const gus = {
     name: "Гусь-лебедь",
     img: '',
     description: '',
-    health: 15,
+    health: 1,
     attacks: [
         {
             name: "щипок",
@@ -35,12 +35,24 @@ const gus = {
                 if (this._damage === 0) return 'Гусь промахнулся';
                 return `Взлетев перед вами, он обрушивает всю мощь своих перепончатых лап, раздирая вашу кожу. Вы получаете ${this._damage} урона`
             },
-            get damagePoints () {
+            get damagePoints() {
                 this._damage = getRandomInteger(0, 5)
                 return this._damage
-            },            
+            },
         }
-    ]
+    ],
+    buttonsDefeat: [
+        {
+            nameButton: 'Начать заново',
+            functionButton: goToIntro,
+        }
+    ],
+    buttonsWin: [
+        {
+            nameButton: 'Продолжить',
+            functionButton: gusDefeat,
+        }
+    ],
 }
 
 const part1 = [
@@ -264,6 +276,14 @@ function tryOpenDoor() {
 }
 
 function endPart1() {
+    goToStoryCard(part2, 0)
+}
+
+function goToIntro() {
+    location.reload()
+}
+
+function gusDefeat() {
     goToStoryCard(part2, 0)
 }
 

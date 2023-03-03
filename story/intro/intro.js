@@ -74,7 +74,7 @@ function animationDark() {
 }
 
 function goToNextChapter() {
-    dowloadChapterScript('story/chapter1/chapter1.js', 'Глава 1');
+    dowloadChapterScript('story/chapter1/chapter1.js', 'chapter1');
 }
 
 goToStoryCard(intro, 0);
