@@ -91,6 +91,7 @@ function goToStoryCard(array, index) {
         buttonsBlock.append(newButton)
         animationText(buttonsBlock, 2000)
     };
+    animationText(buttonsBlock, 2000);
 }
 
 
@@ -175,5 +176,5 @@ function goToFight(player, enemy) {
     fightRound(player, enemy);
 }
 
-//dowloadChapterScript ('story/intro/intro.js', 'intro');
-dowloadChapterScript('story/chapter1/chapter1.js', 'Глава 1');
+dowloadChapterScript ('story/intro/intro.js', 'Вступление');
+//dowloadChapterScript('story/chapter1/chapter1.js', 'Глава 1');
