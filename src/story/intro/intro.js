@@ -1,4 +1,6 @@
 'use strict'
+import goToStoryCard from "../../scripts/main/goToStoryCard";
+
 const intro = [
     {
         name: 'introCard0',
@@ -77,5 +79,6 @@ function goToNextChapter() {
     dowloadChapterScript('story/chapter1/chapter1.js', 'chapter1');
 }
 
-goToStoryCard(intro, 0);
+
+export default intro 
 //mainFieldBody.classList.add('animationText', 1000)

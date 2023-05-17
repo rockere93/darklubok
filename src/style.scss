@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Vezitsa';
-    src: url("./fonts/ofont.ru_Vezitsa.ttf");
+    src: url("fonts/ofont.ru_Vezitsa.ttf");
 }
 
 /*--ОБНУЛЕНИЕ---------------------------------------------------------------------*/
@@ -75,7 +75,7 @@ body {
     font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url(./story/intro/img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
+    background: url(./story/intro/assets/img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
     background-size: cover;
     }
 
@@ -86,7 +86,7 @@ body {
     min-height: 88vh;
     font-size: 3.5vh;
     color: rgba(59, 36, 36);
-    background: url(./story/intro/img/svitok1.png), no-repeat;
+    background: url(./story/intro/assets/img/svitok1.png), no-repeat;
     background-size: inherit;
     background-position: center top;
     margin: 20px auto ;
