@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
 
 const devServer = (isDev) => !isDev ? {} : {
   devServer: {
@@ -14,12 +13,12 @@ const devServer = (isDev) => !isDev ? {} : {
   },
 };
 
-const esLintPlugin = (isDev) => isDev ? [] : [ new ESLintPlugin({ extensions: ['ts', 'js'] }) ];
+
 
 module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
-  entry: "./src/index.ts",
+  entry: "./src/index.js",
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -36,11 +35,6 @@ module.exports = ({ development }) => ({
             }
         ]
     },
-      {
-        test: /\.[tj]s$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: 'asset/resource',
@@ -60,7 +54,6 @@ module.exports = ({ development }) => ({
     ],
   },
   plugins: [
-    ...esLintPlugin(development),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new CopyPlugin({
