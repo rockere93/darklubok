@@ -1,4 +1,8 @@
-'use strict'
+import goToStoryCard from "../../../scripts/main/goToStoryCard";
+import goToFight from "../../../scripts/fight/goToFight";
+import {openLockerDoor, takeFragments, takeRoundedObject, tryOpenDoor, endPart1, goToIntro, gusDefeat} from "./chapter1_actions"
+import player from "../../player/player";
+import animationText from "../../../scripts/animation/animationText";
 
 const gus = {
     name: "Гусь-лебедь",
@@ -238,55 +242,11 @@ const part2 = [{
 },
 ]
 
-function openLockerDoor() {
-    player.inventory.push({ name: 'Старый кухонный нож', });
-    player.attacks.push({
-        name: "Старый кухонный нож",
-        get damagePoints() {
-            this._damage = getRandomInteger(0, 5);
-            return this._damage
-        },
-        get text() {
-            if (this._damage === 0) return 'ВЫ промахнулись';
-            return `Вы бьете ножом, как умеете и наносите ${this._damage} урона`
 
-        },
-    });
-    deleteCardButton(part1[0].buttons, 'Оглядеться');
-    goToStoryCard(part1, 2)
-}
+export { part1, part2}
 
-function takeFragments() {
-    deleteCardButton(part1[0].buttons, 'Осмотреть печь');
-    deleteCardButton(part1[1].buttons, 'Осмотреть печь');
-    deleteCardButton(part1[2].buttons, 'Осмотреть печь')
-    goToStoryCard(part1, 5);
-}
 
-function takeRoundedObject() {
-    deleteCardButton(part1[3].buttons, 'Вытащить округлый предмет');
-    goToStoryCard(part1, 4);
-    player.inventory.push({ name: 'Амулет с надписью "Алёна"', });
 
-}
 
-function tryOpenDoor() {
-    deleteCardButton(part1[6].buttons, 'Попытаться открыть дверь');
-    goToStoryCard(part1, 7)
-}
-
-function endPart1() {
-    goToStoryCard(part2, 0)
-}
-
-function goToIntro() {
-    location.reload()
-}
-
-function gusDefeat() {
-    goToStoryCard(part2, 0)
-}
-
-goToStoryCard(part1, 0)
 //goToFight(player, gus)
-animationText(mainFieldBody, 1000)
+

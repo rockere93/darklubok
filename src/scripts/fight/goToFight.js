@@ -1,3 +1,9 @@
+import fightRound from "./fightRound";
+
+const textCard = document.querySelector('.textCard')
+const buttonsBlock = document.querySelector('.buttons');
+const mainFieldBody = document.querySelector('.mainFieldBody')
+
 function goToFight(player, enemy) {
     mainFieldBody.classList.remove('_opacityZero');
     textCard.innerHTML = ' ';

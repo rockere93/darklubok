@@ -1,5 +1,6 @@
 'use strict'
-import goToStoryCard from "../../scripts/main/goToStoryCard";
+import { goToNextChapter, agreeName, chooseSex } from './intro_actions.js';
+import player from '../../player/player.js';
 
 const intro = [
     {
@@ -48,36 +49,6 @@ const intro = [
     },
 ];
 
-function chooseSex(gender) {
-    player.gender = gender;
-    goToStoryCard(intro, 1);
-    addInputName();
-}
-
-function addInputName() {
-    let input = document.createElement('input');
-    input.id = "inputName";
-    input.placeholder = "Нажмите сюда, чтобы ввести имя";
-    buttonsBlock.prepend(input);
-}
-
-function agreeName() {
-    let input = buttonsBlock.querySelector('input');
-    player.name = input.value;
-    goToStoryCard(intro, 2);
-    animationDark();
-}
-
-
-function animationDark() {
-    if (!mainField.classList.contains('darkAnimation')) {
-        setTimeout(() => mainField.classList.add('darkAnimation'), 2000)
-    }
-}
-
-function goToNextChapter() {
-    dowloadChapterScript('story/chapter1/chapter1.js', 'chapter1');
-}
 
 
 export default intro 
