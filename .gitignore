@@ -1,5 +1,2 @@
-fonts/
-progress/
-sound/ 
-img/
 .vscode/
+node_modules

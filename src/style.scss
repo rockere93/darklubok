@@ -59,6 +59,10 @@ li {
     overflow: hidden;
   }
 
+._opacityZero {
+    opacity: 0;
+}
+
 /*--ОБЩЕЕ---------------------------------------------------------------------*/
 .clearfix::after {
     content: "";
@@ -71,7 +75,7 @@ body {
     font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url(story/intro/img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
+    background: url(./story/intro/assets/img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
     background-size: cover;
     }
 
@@ -82,14 +86,13 @@ body {
     min-height: 88vh;
     font-size: 3.5vh;
     color: rgba(59, 36, 36);
-    background: url(story/intro/img/svitok1.png), no-repeat;
+    background: url(./story/intro/assets/img/svitok1.png), no-repeat;
     background-size: inherit;
     background-position: center top;
     margin: 20px auto ;
 }
 
 .mainFieldBody {
-    opacity: 0;
     padding: 7vh 14vh;
 }
 
@@ -136,8 +139,23 @@ body {
     width: 100%;
     margin-top: 20px;
     font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
-    font-size: 36px;
+    font-size: 3.5vh;
     color: rgba(59, 36, 36);
     flex-grow: 2;
     
+}
+
+.fightHead {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(160, 12, 12);
+    font-size: 4vh;
+}
+
+.fightString {
+    opacity: 0;
+}
+
+.fightString:nth-child(2n+1) {
+    color: #c02020;
 }
