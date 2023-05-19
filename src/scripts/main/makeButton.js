@@ -1,9 +1,11 @@
-function makeButton(name, func, ...arg) {
-    let button = document.createElement('div');
+function makeButton (name, func, ...arg) {
+    const button = document.createElement('div');
     button.classList.add('button');
     button.textContent = `${name}`;
-    button.onclick = function () { func(...arg)};
-    return button
+    button.addEventListener('click', function () {
+        func(...arg);
+    });
+    return button;
 }
 
-export default makeButton
+export default makeButton;

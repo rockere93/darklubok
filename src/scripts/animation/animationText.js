@@ -1,8 +1,8 @@
-function animationText(divClass, ms) {
+function animationText (divClass, ms) {
     if (divClass.classList.contains('animationText')) {
-        divClass.classList.remove('animationText')
+        divClass.classList.remove('animationText');
     };
-    setTimeout(() => divClass.classList.add('animationText'), ms)
+    setTimeout(() => divClass.classList.add('animationText'), ms);
 }
 
-export default animationText
+export default animationText;
