@@ -3,7 +3,7 @@ import animationText from '../animation/animationText';
 import getRandomInteger from '../main/getRandomInteger';
 
 const textCard = document.querySelector('.textCard');
-const buttonsBlock = document.querySelector('.buttons');
+const buttonsBlock = document.querySelector('.buttons_block');
 const mainFieldBody = document.querySelector('.mainFieldBody');
 
 function goToFight (player, enemy) {

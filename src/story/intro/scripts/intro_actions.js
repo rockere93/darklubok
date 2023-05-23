@@ -3,7 +3,7 @@ import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import intro from './intro_story';
 import { part1 } from '../../chapter1/scripts/chapter1_story';
 
-const buttonsBlock = document.querySelector('.buttons');
+const buttonsBlock = document.querySelector('.buttons_block');
 const mainField = document.querySelector('.mainField');
 
 function chooseSex (gender) {

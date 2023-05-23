@@ -2,7 +2,7 @@ import animationText from '../animation/animationText';
 import makeButton from './makeButton';
 
 const textCard = document.querySelector('.textCard');
-const buttonsBlock = document.querySelector('.buttons');
+const buttonsBlock = document.querySelector('.buttons_block');
 const mainFieldBody = document.querySelector('.mainFieldBody');
 
 function goToStoryCard (array, index) {

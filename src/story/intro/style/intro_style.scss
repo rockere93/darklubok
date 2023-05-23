@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Vezitsa';
+    src: url("fonts/ofont.ru_Vezitsa.ttf");
+}
+
+body.intro {
+    background: url(./story/intro/assets/img/1669928962_50-indasil-club-p-derevenskie-zarisovki-oboi-57.jpg), no-repeat;
+    background-size: cover;
+}
+
+.mainField.intro {
+    color: rgba(59, 36, 36);
+    background: url(./story/intro/assets/img/svitok1.png), no-repeat;
+    background-size: inherit;
+    background-position: center top;
+    margin: 20px auto ;
+}
+
+#inputName {
+    background: none;
+    outline: none;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
+    font-size: 3.5vh;
+    color: rgba(59, 36, 36);
+    flex-grow: 2;
+    
+}
+
+.animationText {
+    transition-property: opacity !important;
+    transition-duration: 2s !important;
+    opacity: 1 !important;
+}
+
+.darkAnimation {
+    transition-property: filter, color,  -webkit-text-stroke;
+    transition-duration: 5s;
+    transition-delay: 1s;
+    -webkit-text-stroke: 1px #ff9e9e;
+    color: rgb(148, 0, 0);
+    filter: invert(0.1) brightness(0.6) contrast(4.7);
+}
