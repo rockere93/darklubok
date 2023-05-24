@@ -13,5 +13,7 @@
 }
 
 .button:hover {
+    transition-property: color;
+    transition-duration: 0.5s;
     color: rgb(160, 12, 12);
 }
