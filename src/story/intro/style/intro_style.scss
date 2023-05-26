@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Vezitsa';
+    src: url("fonts/ofont.ru_Vezitsa.ttf");
+}
+
+body.intro {
+    padding-top: 20px;
+    position: relative;
+    background-image: url(../src/story/intro/assets/img/intro_background_light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.intro::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../src/story/intro/assets/img/intro_background_dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+}
+
+body.intro.dark::before {
+    animation: show 4s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    @keyframes show {
+        from {opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+}
+
+.mainField.intro {   
+    color: rgba(59, 36, 36);
+    background: url(../src/story/intro/assets/img/svitok1.png), no-repeat;
+    background-size: contain;
+    background-position: center top;
+    margin: 0 auto;
+
+    &.darkAnimation {
+        transition-property: filter, color,  -webkit-text-stroke;
+        transition-duration: 3s;
+        transition-delay: 1s;
+        -webkit-text-stroke: 0.1vh rgb(207, 176, 176);
+        color: rgb(244, 145, 145);
+        filter: invert(0.1) brightness(0.6) contrast(4.7);
+    }
+}
+
+.mainFieldBody.intro {
+    padding: 20vh 17vh;
+}
+
+#inputName {
+    background: none;
+    outline: none;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
+    font-size: 3.5vh;
+    color: rgba(59, 36, 36);
+    flex-grow: 2;
+    border: none;
+    
+}
+
+._opacityZero {
+    opacity: 0;
+}
+
+.animationText {
+    transition-property: opacity;
+    transition-duration: 2s;
+    opacity: 1;
+}
+

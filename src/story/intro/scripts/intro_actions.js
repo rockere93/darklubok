@@ -3,8 +3,9 @@ import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import intro from './intro_story';
 import { part1 } from '../../chapter1/scripts/chapter1_story';
 
-const buttonsBlock = document.querySelector('.buttons');
+const buttonsBlock = document.querySelector('.buttons_block');
 const mainField = document.querySelector('.mainField');
+const pageBody = document.querySelector('body');
 
 function chooseSex (gender) {
     player.gender = gender;
@@ -21,7 +22,7 @@ function addInputName () {
         if (event.code === "Enter") {
             agreeName();
         }
-    })
+    });
 }
 
 function agreeName () {
@@ -38,7 +39,8 @@ function agreeName () {
 function animationDark () {
     if (!mainField.classList.contains('darkAnimation')) {
         setTimeout(() => mainField.classList.add('darkAnimation'), 2000);
-    }
+    };
+    pageBody.classList.add('dark');
 }
 
 function goToNextChapter () {

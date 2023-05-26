@@ -1,0 +1,14 @@
+.fightHead {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(160, 12, 12);
+    font-size: 4vh;
+}
+
+.fightString {
+    opacity: 0;
+}
+
+.fightString:nth-child(2n+1) {
+    color: #c02020;
+}
