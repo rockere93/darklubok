@@ -18,17 +18,21 @@ function addInputName () {
     input.placeholder = 'Нажмите сюда, чтобы ввести имя';
     buttonsBlock.prepend(input);
     input.addEventListener ("keydown", function (event) {
-        if (event.code == "Enter" && input.value == '') {
-            alert("Введите имя")
+        if (event.code === "Enter") {
+            agreeName();
         }
     })
 }
 
 function agreeName () {
     const input = buttonsBlock.querySelector('input');
+    if (input.value === '') {
+        alert("Введите имя")
+    } else {
     player.name = input.value;
     goToStoryCard(intro, 2);
     animationDark();
+    }
 }
 
 function animationDark () {
