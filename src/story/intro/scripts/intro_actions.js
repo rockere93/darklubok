@@ -5,6 +5,7 @@ import { part1 } from '../../chapter1/scripts/chapter1_story';
 
 const buttonsBlock = document.querySelector('.buttons_block');
 const mainField = document.querySelector('.mainField');
+const pageBody = document.querySelector('body');
 
 function chooseSex (gender) {
     player.gender = gender;
@@ -17,11 +18,11 @@ function addInputName () {
     input.id = 'inputName';
     input.placeholder = 'Нажмите сюда, чтобы ввести имя';
     buttonsBlock.prepend(input);
-    input.addEventListener ("keydown", function (event) {
-        if (event.code == "Enter" && input.value == '') {
-            alert("Введите имя")
+    input.addEventListener('keydown', function (event) {
+        if (event.code === 'Enter' && input.value === '') {
+            alert('Введите имя');
         }
-    })
+    });
 }
 
 function agreeName () {
@@ -34,7 +35,8 @@ function agreeName () {
 function animationDark () {
     if (!mainField.classList.contains('darkAnimation')) {
         setTimeout(() => mainField.classList.add('darkAnimation'), 2000);
-    }
+    };
+    pageBody.classList.add('dark');
 }
 
 function goToNextChapter () {
