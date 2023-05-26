@@ -27,12 +27,17 @@ function addInputName () {
 
 function agreeName () {
     const input = buttonsBlock.querySelector('input');
-    if (input.value === '') {
-        alert("Введите имя")
+    if (input.value === '' && input.classList.contains('empty')) {
+        input.style.paddingLeft = '5px';
+        setTimeout(() => input.style.paddingLeft = '0px', 50)
+        setTimeout(() => input.style.paddingLeft = '5px', 100)
+        setTimeout(() => input.style.paddingLeft = '0px', 150)
+    } else if (input.value === '') {
+        input.classList.add('empty');
     } else {
-    player.name = input.value;
-    goToStoryCard(intro, 2);
-    animationDark();
+        player.name = input.value;
+        goToStoryCard(intro, 2);
+        animationDark();
     }
 }
 
