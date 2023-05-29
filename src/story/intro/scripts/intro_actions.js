@@ -1,7 +1,7 @@
 import player from '../../player/player';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import intro from './intro_story';
-import { part1 } from '../../chapter1/scripts/chapter1_story';
+import { startChapter1 } from '../../chapter1/scripts/chapter1_actions';
 
 const buttonsBlock = document.querySelector('.buttons_block');
 const mainField = document.querySelector('.mainField');
@@ -18,8 +18,8 @@ function addInputName () {
     input.id = 'inputName';
     input.placeholder = 'Нажмите сюда, чтобы ввести имя';
     buttonsBlock.prepend(input);
-    input.addEventListener ("keydown", function (event) {
-        if (event.code === "Enter") {
+    input.addEventListener('keydown', function (event) {
+        if (event.code === 'Enter') {
             agreeName();
         }
     });
@@ -28,10 +28,7 @@ function addInputName () {
 function agreeName () {
     const input = buttonsBlock.querySelector('input');
     if (input.value === '' && input.classList.contains('empty')) {
-        input.style.paddingLeft = '5px';
-        setTimeout(() => input.style.paddingLeft = '0px', 50)
-        setTimeout(() => input.style.paddingLeft = '5px', 100)
-        setTimeout(() => input.style.paddingLeft = '0px', 150)
+        animationInput();
     } else if (input.value === '') {
         input.classList.add('empty');
     } else {
@@ -41,6 +38,23 @@ function agreeName () {
     }
 }
 
+function goToChapter1 () {
+    startChapter1();
+}
+
+// ----------Animation scripts--------------//
+
+function animationInput () {
+    function changePadding (value) {
+        const input = buttonsBlock.querySelector('input');
+        input.style.paddingLeft = value;
+    }
+    changePadding('5px');
+    setTimeout(changePadding, 50, '0px');
+    setTimeout(changePadding, 100, '5px');
+    setTimeout(changePadding, 150, '0px');
+}
+
 function animationDark () {
     if (!mainField.classList.contains('darkAnimation')) {
         setTimeout(() => mainField.classList.add('darkAnimation'), 2000);
@@ -48,8 +62,4 @@ function animationDark () {
     pageBody.classList.add('dark');
 }
 
-function goToNextChapter () {
-    goToStoryCard(part1, 0);
-}
-
-export { animationDark, goToNextChapter, agreeName, addInputName, chooseSex };
+export { animationDark, goToChapter1, agreeName, addInputName, chooseSex };

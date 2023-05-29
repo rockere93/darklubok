@@ -21,6 +21,10 @@ function openLockerDoor () {
     goToStoryCard(part1, 2);
 }
 
+function startChapter1 () {
+    goToStoryCard(part1, 0);
+}
+
 function takeFragments () {
     deleteCardButton(part1[0].buttons, 'Осмотреть печь');
     deleteCardButton(part1[1].buttons, 'Осмотреть печь');
@@ -55,4 +59,4 @@ function goToStoryCardPart1 () {
     goToStoryCard(part1, ...arguments);
 }
 
-export { openLockerDoor, takeFragments, takeRoundedObject, tryOpenDoor, endPart1, goToIntro, gusDefeat, goToStoryCardPart1 };
+export { openLockerDoor, takeFragments, takeRoundedObject, tryOpenDoor, endPart1, goToIntro, gusDefeat, goToStoryCardPart1, startChapter1 };
