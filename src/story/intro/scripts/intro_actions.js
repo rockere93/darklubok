@@ -2,10 +2,7 @@ import player from '../../player/player';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import intro from './intro_story';
 import { startChapter1 } from '../../chapter1/scripts/chapter1_actions';
-
-const buttonsBlock = document.querySelector('.buttons_block');
-const mainField = document.querySelector('.mainField');
-const pageBody = document.querySelector('body');
+import { pageBody, buttonsBlock, mainField } from '../../../scripts/DOM-elements/mainelements';
 
 function chooseSex (gender) {
     player.gender = gender;
