@@ -1,5 +1,5 @@
 'use strict';
-import { goToNextChapter, agreeName, chooseSex } from './intro_actions.js';
+import { goToChapter1, agreeName, chooseSex } from './intro_actions.js';
 import player from '../../player/player.js';
 
 const intro = [
@@ -42,7 +42,7 @@ const intro = [
         buttons: [
             {
                 nameButton: 'Продолжить',
-                functionButton: goToNextChapter
+                functionButton: goToChapter1
             }
         ]
     }

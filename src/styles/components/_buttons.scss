@@ -1,0 +1,19 @@
+.buttons_block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 3px solid  rgb(59 36 36);
+}
+
+.button {
+    min-height: 20px;
+    min-width: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    transition-property: color;
+    transition-duration: 0.5s;
+    color: rgb(160, 12, 12);
+}
