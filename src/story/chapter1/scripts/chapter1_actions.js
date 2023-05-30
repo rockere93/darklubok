@@ -3,6 +3,8 @@ import deleteCardButton from '../../../scripts/main/deleteCardButton';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import { part1, part2 } from './chapter1_story';
 import getRandomInteger from '../../../scripts/main/getRandomInteger';
+import { mainField, mainFieldBody, pageBody } from '../../../scripts/DOM-elements/mainelements';
+import animationText from '../../../scripts/animation/animationText';
 
 function openLockerDoor () {
     player.inventory.push({ name: 'Старый кухонный нож' });
@@ -22,6 +24,10 @@ function openLockerDoor () {
 }
 
 function startChapter1 () {
+    pageBody.className = 'chapter1-part1';
+    mainField.className = 'mainField _opacityZero';
+    mainFieldBody.className = 'mainFieldBody _opacityZero';
+    animationText(mainField, 3000)
     goToStoryCard(part1, 0);
 }
 
@@ -47,6 +53,7 @@ function endPart1 () {
     goToStoryCard(part2, 0);
 }
 
+//-------------Затычка------------//
 function goToIntro () {
     location.reload();
 }

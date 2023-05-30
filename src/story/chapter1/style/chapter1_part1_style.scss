@@ -1,0 +1,12 @@
+body.chapter1-part1 {
+    background-image: url(../src/story/chapter1/assets/img/room.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    & > .mainField {
+        color: rgba(59, 36, 36);
+        background: url(../src/story/chapter1/assets/img/pergament.jpg), no-repeat;
+        background-size: contain;
+        background-position: center top;
+    }
+}

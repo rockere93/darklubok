@@ -45,7 +45,6 @@ body.intro.dark::before {
     background: url(../src/story/intro/assets/img/svitok1.png), no-repeat;
     background-size: contain;
     background-position: center top;
-    margin: 0 auto;
 
     &.darkAnimation {
         transition-property: filter, color,  -webkit-text-stroke;
