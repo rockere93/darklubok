@@ -8,5 +8,14 @@ body.chapter1-part1 {
         background: url(../src/story/chapter1/assets/img/pergament.jpg), no-repeat;
         background-size: contain;
         background-position: center top;
+        border-image-source: url(../src/story/chapter1/assets/img/ramka.png);
+        border-image-slice: 500 500 500 500 fill;
+        border-image-repeat: repeat;
+        border-image-width: 18vh;
+        border-image-outset: 1vh;
+
+        & > .mainFieldBody {
+            padding: 12vh 14vh;
+        }
     }
 }
