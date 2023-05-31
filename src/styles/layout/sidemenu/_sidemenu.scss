@@ -1,0 +1,29 @@
+.sidemenu {
+    position: absolute;
+    top: 40px;
+    left: -70px;
+    padding: 0 4px;  
+    background-image: url('/src/styles/layout/sidemenu/assets/background.png');
+    border: 2px solid rgb(59, 36, 36);
+    border-radius: 18px;  
+    
+}
+
+.sidemenu__list {
+    list-style-type: none;
+    padding: 0;
+    &> li {
+
+        &:first-child {    
+        border-top: 2px solid rgb(59, 36, 36);
+        }
+    }
+}
+
+.sideMenu___button {
+    border: none;
+    padding: 6px 4px;
+    border-bottom: 2px solid rgb(59, 36, 36);
+    background: none;
+    width: 7vh;
+}
