@@ -2,7 +2,7 @@ import player from '../../player/player';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import intro from './intro_story';
 import { startChapter1 } from '../../chapter1/scripts/chapter1_actions';
-import { pageBody, buttonsBlock, mainField } from '../../../scripts/DOM-elements/mainelements';
+import { pageBody, buttonsBlock, mainfield } from '../../../scripts/DOM-elements/mainelements';
 
 function chooseSex (gender) {
     player.gender = gender;
@@ -53,8 +53,8 @@ function animationInput () {
 }
 
 function animationDark () {
-    if (!mainField.classList.contains('darkAnimation')) {
-        setTimeout(() => mainField.classList.add('darkAnimation'), 2000);
+    if (!mainfield.classList.contains('dark_animation')) {
+        setTimeout(() => mainfield.classList.add('dark_animation'), 2000);
     };
     pageBody.classList.add('dark');
 }

@@ -3,7 +3,7 @@ import deleteCardButton from '../../../scripts/main/deleteCardButton';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import { part1, part2 } from './chapter1_story';
 import getRandomInteger from '../../../scripts/main/getRandomInteger';
-import { mainField, mainFieldBody, pageBody } from '../../../scripts/DOM-elements/mainelements';
+import { mainfield, mainfield__body, pageBody } from '../../../scripts/DOM-elements/mainelements';
 import animationText from '../../../scripts/animation/animationText';
 
 function openLockerDoor () {
@@ -24,10 +24,10 @@ function openLockerDoor () {
 }
 
 function startChapter1 () {
-    pageBody.className = 'chapter1-part1';
-    mainField.className = 'mainField _opacityZero';
-    mainFieldBody.className = 'mainFieldBody _opacityZero';
-    animationText(mainField, 3000)
+    pageBody.className = 'body body_theme_ch1-p1';
+    mainfield.className = 'mainfield mainfield_theme_ch1-p1 _opacityZero';
+    mainfield__body.className = 'mainfield__body mainfield__body_theme_ch1-p1 _opacityZero';
+    animationText(mainfield, 3000)
     goToStoryCard(part1, 0);
 }
 

@@ -1,9 +1,9 @@
 import animationText from '../animation/animationText';
 import makeButton from './makeButton';
-import { textCard, buttonsBlock, mainFieldBody } from '../DOM-elements/mainelements';
+import { textCard, buttonsBlock, mainfield__body } from '../DOM-elements/mainelements';
 
 function goToStoryCard (array, index) {
-    animationText(mainFieldBody, 1000);
+    animationText(mainfield__body, 1000);
     textCard.innerHTML = ' ' + `${array[index].text}`;
     buttonsBlock.innerHTML = ' ';
     const buttonsArray = array[index].buttons;

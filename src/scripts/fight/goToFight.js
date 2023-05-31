@@ -1,10 +1,10 @@
 import makeButton from '../main/makeButton';
 import animationText from '../animation/animationText';
 import getRandomInteger from '../main/getRandomInteger';
-import { mainFieldBody, buttonsBlock, textCard } from '../DOM-elements/mainelements';
+import { mainfield__body, buttonsBlock, textCard } from '../DOM-elements/mainelements';
 
 function goToFight (player, enemy) {
-    mainFieldBody.classList.remove('_opacityZero');
+    mainfield__body.classList.remove('_opacityZero');
     textCard.innerHTML = ' ';
     buttonsBlock.innerHTML = ' ';
     const fightHead = document.createElement('div');
@@ -69,7 +69,7 @@ function hitDamage (subject, object, indexAttack) {
     fightString.textContent = `${subject.attacks[indexAttack].text}. ` + `Осталось здоровья: ${object.health}`;
     fightString.classList.add('fightString', '_opacityZero');
     textCard.append(fightString);
-    fightString = mainFieldBody.querySelector('.textCard > p:last-child');
+    fightString = mainfield__body.querySelector('.textCard > p:last-child');
     animationText(fightString, 1000);
 };
 

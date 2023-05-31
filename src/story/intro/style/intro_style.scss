@@ -3,7 +3,7 @@
     src: url("fonts/ofont.ru_Vezitsa.ttf");
 }
 
-body.intro {
+.body_theme_intro {
     padding-top: 20px;
     position: relative;
     background-image: url(../src/story/intro/assets/img/intro_background_light.jpg);
@@ -12,7 +12,7 @@ body.intro {
     min-height: 100vh;
 }
 
-body.intro::before {
+.body_theme_intro::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@ body.intro::before {
     opacity: 0;
 }
 
-body.intro.dark::before {
+.body_theme_intro.dark::before {
     animation: show 4s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
@@ -40,13 +40,13 @@ body.intro.dark::before {
 }
 }
 
-.mainField.intro {   
+.mainfield_theme_intro {   
     color: rgba(59, 36, 36);
     background: url(../src/story/intro/assets/img/svitok1.png), no-repeat;
     background-size: contain;
     background-position: center top;
 
-    &.darkAnimation {
+    &.dark_animation {
         transition-property: filter, color,  -webkit-text-stroke;
         transition-duration: 3s;
         transition-delay: 1s;
@@ -56,7 +56,7 @@ body.intro.dark::before {
     }
 }
 
-.mainFieldBody.intro {
+.mainfield__body_theme_intro {
     padding: 20vh 17vh;
 }
 

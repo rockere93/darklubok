@@ -1,9 +1,9 @@
-body.chapter1-part1 {
+.body_theme_ch1-p1 {
     background-image: url(../src/story/chapter1/assets/img/room.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
-    & > .mainField {
+.mainfield_theme_ch1-p1 {
         color: rgba(59, 36, 36);
         background: url(../src/story/chapter1/assets/img/pergament.jpg), no-repeat;
         background-size: contain;
@@ -13,9 +13,10 @@ body.chapter1-part1 {
         border-image-repeat: repeat;
         border-image-width: 18vh;
         border-image-outset: 1vh;
-
-        & > .mainFieldBody {
-            padding: 12vh 14vh;
-        }
     }
+
+.mainfield__body_theme_ch1-p1 {
+        padding: 12vh 14vh;
+    }
+
 }
