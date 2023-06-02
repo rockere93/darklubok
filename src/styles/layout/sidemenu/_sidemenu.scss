@@ -2,7 +2,7 @@
     position: absolute;
     top: 40px;
     left: -70px;
-    padding: 0 4px;  
+    padding: 30px 4px;  
     background-image: url('/src/styles/layout/sidemenu/assets/background.png');
     border: 2px solid rgb(59, 36, 36);
     border-radius: 18px;  
@@ -10,10 +10,8 @@
 }
 
 .sidemenu__list {
-    list-style-type: none;
     padding: 0;
     &> li {
-
         &:first-child {    
         border-top: 2px solid rgb(59, 36, 36);
         }
@@ -21,9 +19,29 @@
 }
 
 .sideMenu___button {
-    border: none;
-    padding: 6px 4px;
-    border-bottom: 2px solid rgb(59, 36, 36);
-    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 7vh;
+    height: 8vh;
+    padding: 6px 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(59, 36, 36);
+
+    &:first-child {
+        border-top: 2px solid rgb(59, 36, 36);
+    }
+
+    & > img {
+        width: 95%;
+
+        &:hover {
+            transition-property: width;
+            transition-duration: 500ms;
+            width: 100%;
+        }
+    }
 }
