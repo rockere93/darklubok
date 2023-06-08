@@ -1,0 +1,13 @@
+%popup_blackout {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 3.5vh;
+    font-family: "Vezitsa", "Fira Sans", Arial, sans-serif;
+    z-index: 99;
+    background-color: black;
+    opacity: 0.8;
+}

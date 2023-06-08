@@ -1,0 +1,47 @@
+.character-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+
+    &::before {
+        @extend %popup_blackout;
+    }
+    }
+
+
+.character-window__body {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    max-width: 107vh;
+    min-height: 80vh;
+    font-size: 3.5vh;
+    font-family: "Vezitsa", "Fira Sans", Arial, sans-serif;
+    background-image: url('../src/img/layout/character-window/background.png');
+    opacity: 1;
+    z-index: 99;
+}
+
+.character-window__inventory {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: start;
+    flex-wrap: wrap;
+}
+
+.inventory__item-block {
+    width: 25%;
+    padding: 1vh;
+    border: 1px solid brown;
+}
+
+
+.character-window__player-info {
+    width: 30%;
+    border-left: 2px solid black;
+}
