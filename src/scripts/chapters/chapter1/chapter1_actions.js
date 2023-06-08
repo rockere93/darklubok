@@ -1,4 +1,4 @@
-import player from '../../player/player';
+import player from '../../characters/player';
 import deleteCardButton from '../../../scripts/main/deleteCardButton';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import { part1, part2 } from './chapter1_story';
@@ -7,18 +7,6 @@ import { mainfield, mainfield__body, pageBody } from '../../../scripts/DOM-eleme
 import animationText from '../../../scripts/animation/animationText';
 
 function openLockerDoor () {
-    player.inventory.push({ name: 'Старый кухонный нож' });
-    player.attacks.push({
-        name: 'Старый кухонный нож',
-        get damagePoints () {
-            this._damage = getRandomInteger(0, 5);
-            return this._damage;
-        },
-        get text () {
-            if (this._damage === 0) return 'ВЫ промахнулись';
-            return `Вы бьете ножом, как умеете и наносите ${this._damage} урона`;
-        }
-    });
     deleteCardButton(part1[0].buttons, 'Оглядеться');
     goToStoryCard(part1, 2);
 }

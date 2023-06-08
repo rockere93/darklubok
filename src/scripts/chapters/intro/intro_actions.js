@@ -1,8 +1,8 @@
-import player from '../../player/player';
-import goToStoryCard from '../../../scripts/main/goToStoryCard';
+import player from '../../characters/player';
+import goToStoryCard from '../../main/goToStoryCard';
 import intro from './intro_story';
-import { startChapter1 } from '../../chapter1/scripts/chapter1_actions';
-import { pageBody, buttonsBlock, mainfield } from '../../../scripts/DOM-elements/mainelements';
+import { startChapter1 } from '../chapter1/chapter1_actions';
+import { pageBody, buttonsBlock, mainfield } from '../../DOM-elements/mainelements';
 
 function chooseSex (gender) {
     player.gender = gender;

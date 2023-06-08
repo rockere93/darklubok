@@ -1,6 +1,6 @@
-import goToFight from '../../../scripts/fight/goToFight';
+import goToFight from '../../fight/goToFight';
 import { openLockerDoor, takeFragments, takeRoundedObject, tryOpenDoor, endPart1, goToStoryCardPart1 } from './chapter1_actions';
-import player from '../../player/player';
+import player from '../../characters/player';
 import gus from './chapter1_enemies';
 
 const part1 = [

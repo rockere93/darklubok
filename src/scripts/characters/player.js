@@ -1,4 +1,4 @@
-import getRandomInteger from '../../scripts/main/getRandomInteger';
+import getRandomInteger from '../main/getRandomInteger';
 
 const player = {
     name: '',

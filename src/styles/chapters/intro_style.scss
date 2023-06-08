@@ -6,7 +6,7 @@
 .body_theme_intro {
     padding-top: 20px;
     position: relative;
-    background-image: url(../src/story/intro/assets/img/intro_background_light.jpg);
+    background-image: url(../src/img/intro/intro_background_light.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -20,7 +20,7 @@
     display: block;
     width: 100%;
     min-height: 100vh;
-    background-image: url(../src/story/intro/assets/img/intro_background_dark.jpg);
+    background-image: url(../src/img/intro/intro_background_dark.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
@@ -42,7 +42,7 @@
 
 .mainfield_theme_intro {   
     color: rgba(59, 36, 36);
-    background: url(../src/story/intro/assets/img/svitok1.png), no-repeat;
+    background: url(../src/img/intro/svitok1.png), no-repeat;
     background-size: contain;
     background-position: center top;
 

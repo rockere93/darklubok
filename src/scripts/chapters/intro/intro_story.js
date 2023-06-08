@@ -1,6 +1,6 @@
 'use strict';
 import { goToChapter1, agreeName, chooseSex } from './intro_actions.js';
-import player from '../../player/player.js';
+import player from '../../characters/player.js';
 
 const intro = [
     {

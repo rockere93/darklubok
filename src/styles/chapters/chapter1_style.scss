@@ -1,14 +1,14 @@
 .body_theme_ch1-p1 {
-    background-image: url(../src/story/chapter1/assets/img/room.jpg);
+    background-image: url(../src/img/chapter1/room.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
 .mainfield_theme_ch1-p1 {
         color: rgba(59, 36, 36);
-        background: url(../src/story/chapter1/assets/img/pergament.jpg), no-repeat;
+        background: url(../src/img//chapter1/pergament.jpg), no-repeat;
         background-size: contain;
         background-position: center top;
-        border-image-source: url(../src/story/chapter1/assets/img/ramka.png);
+        border-image-source: url(../src/img//chapter1/ramka.png);
         border-image-slice: 500 500 500 500 fill;
         border-image-repeat: repeat;
         border-image-width: 18vh;
