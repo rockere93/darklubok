@@ -2,12 +2,14 @@ import player from '../../characters/player';
 import deleteCardButton from '../../../scripts/main/deleteCardButton';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import { part1, part2 } from './chapter1_story';
-import getRandomInteger from '../../../scripts/main/getRandomInteger';
 import { mainfield, mainfield__body, pageBody } from '../../../scripts/DOM-elements/mainelements';
 import animationText from '../../../scripts/animation/animationText';
+import addItemInventory from '../../main/addItemInventory';
+import oldKitchenKnife from '../../items/old_kitchen_knife';
 
 function openLockerDoor () {
     deleteCardButton(part1[0].buttons, 'Оглядеться');
+    addItemInventory(oldKitchenKnife);
     goToStoryCard(part1, 2);
 }
 
