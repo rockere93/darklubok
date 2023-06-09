@@ -49,4 +49,4 @@ const intro = [
 ];
 
 export default intro;
-// mainfield__body.classList.add('animationText', 1000)
+// mainfieldBody.classList.add('animationText', 1000)

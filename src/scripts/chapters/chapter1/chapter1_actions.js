@@ -2,7 +2,7 @@ import player from '../../characters/player';
 import deleteCardButton from '../../../scripts/main/deleteCardButton';
 import goToStoryCard from '../../../scripts/main/goToStoryCard';
 import { part1, part2 } from './chapter1_story';
-import { mainfield, mainfield__body, pageBody } from '../../../scripts/DOM-elements/mainelements';
+import { mainfield, mainfieldBody, pageBody } from '../../../scripts/DOM-elements/mainelements';
 import animationText from '../../../scripts/animation/animationText';
 import addItemInventory from '../../main/addItemInventory';
 import oldKitchenKnife from '../../items/old_kitchen_knife';
@@ -10,14 +10,19 @@ import oldKitchenKnife from '../../items/old_kitchen_knife';
 function openLockerDoor () {
     deleteCardButton(part1[0].buttons, 'Оглядеться');
     addItemInventory(oldKitchenKnife);
+    addItemInventory(oldKitchenKnife);
+    addItemInventory(oldKitchenKnife);
+    addItemInventory(oldKitchenKnife);
+    addItemInventory(oldKitchenKnife);
+    addItemInventory(oldKitchenKnife);
     goToStoryCard(part1, 2);
 }
 
 function startChapter1 () {
     pageBody.className = 'body body_theme_ch1-p1';
     mainfield.className = 'mainfield mainfield_theme_ch1-p1 _opacityZero';
-    mainfield__body.className = 'mainfield__body mainfield__body_theme_ch1-p1 _opacityZero';
-    animationText(mainfield, 3000)
+    mainfieldBody.className = 'mainfield__body mainfield__body_theme_ch1-p1 _opacityZero';
+    animationText(mainfield, 3000);
     goToStoryCard(part1, 0);
 }
 
@@ -43,7 +48,7 @@ function endPart1 () {
     goToStoryCard(part2, 0);
 }
 
-//-------------Затычка------------//
+// -------------Затычка------------//
 function goToIntro () {
     location.reload();
 }

@@ -18,7 +18,7 @@
     }
 }
 
-.sideMenu___button {
+.sideMenu__button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,6 +30,10 @@
     background: none;
     border: none;
     border-bottom: 2px solid rgb(59, 36, 36);
+
+    &:focus-visible {
+        outline: none;
+    }
 
     &:first-child {
         border-top: 2px solid rgb(59, 36, 36);

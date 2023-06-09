@@ -24,7 +24,7 @@
     font-family: "Vezitsa", "Fira Sans", Arial, sans-serif;
     background-image: url('../src/img/layout/character-window/background.png');
     opacity: 1;
-    z-index: 99;
+    z-index: 90;
 }
 
 .character-window__inventory {
@@ -36,9 +36,25 @@
 }
 
 .inventory__item-block {
+    position: relative;
     width: 25%;
     padding: 1vh;
     border: 1px solid brown;
+    &:hover .inventory__item-description {
+        display: block;
+    }
+}
+
+.inventory__item-description {
+    display: none;
+    width: 33vh;
+    position: absolute;
+    left: 50%;
+    font-size: 0.8em;
+    background-color: white;
+    padding: 1vh;
+    border-radius: 3vh;
+    z-index: 91;
 }
 
 
@@ -46,3 +62,4 @@
     width: 30%;
     border-left: 2px solid black;
 }
+

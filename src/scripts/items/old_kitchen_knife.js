@@ -1,10 +1,10 @@
-import getRandomInteger from "../main/getRandomInteger";
+import getRandomInteger from '../main/getRandomInteger';
 
-const oldKitchenKnife = { 
+const oldKitchenKnife = {
     name: 'Старый кухонный нож',
     description: 'Небольшой нож с выщербленным лезвием и перемотанной полосками кожи деревянной ручкой.',
-    img: '../src/img/items/old_kitchen_knife.png',
-    weaponAttaсks:  [
+    img: require('../../img/items/old_kitchen_knife.png'),
+    weaponAttaсks: [
         {
             name: 'Ударить кухонным ножом',
             get damagePoints () {
@@ -27,7 +27,7 @@ const oldKitchenKnife = {
                 return `Вы попали, но выщербленное лезвие слегка ранит противника на ${this._damage} урона`;
             }
         }
-    ],
+    ]
 };
 
-export default oldKitchenKnife
+export default oldKitchenKnife;
