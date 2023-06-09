@@ -1,7 +1,6 @@
 import player from '../characters/player';
 
 function addItemInventory (item) {
-    
     player.inventory.push(item);
     if (item.weaponAttaсks) {
         for (const attack of item.weaponAttaсks) {
