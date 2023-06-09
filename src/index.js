@@ -1,11 +1,12 @@
-//  import goToStoryCard from './scripts/main/goToStoryCard';
-//  import intro from '../src/scripts/chapters/intro/intro_story';
 import './main.scss';
+import goToStoryCard from './scripts/main/goToStoryCard';
+import intro from '../src/scripts/chapters/intro/intro_story';
+import sidemenuListener from './scripts/main/sidemenuListener';
 
-// goToStoryCard(intro, 0);
+sidemenuListener();
+
+goToStoryCard(intro, 0);
 
 // ----запуск первой главы--- //
-import sidemenuListener from './scripts/main/sidemenuListener';
-import { startChapter1 } from './scripts/chapters/chapter1/chapter1_actions';
-startChapter1();
-sidemenuListener();
+// import { startChapter1 } from './scripts/chapters/chapter1/chapter1_actions';
+// startChapter1();
