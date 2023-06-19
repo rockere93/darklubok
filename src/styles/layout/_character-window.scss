@@ -1,5 +1,5 @@
 .character-window {
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,11 +28,12 @@
 }
 
 .character-window__inventory {
-    width: 70%;
     display: flex;
     justify-content: flex-start;
     align-content: start;
     flex-wrap: wrap;
+    padding: 5vh 2vh 0;
+    width: 70%;
 }
 
 .inventory__item-block {
@@ -63,3 +64,8 @@
     border-left: 2px solid black;
 }
 
+.player-info__portrait {
+    max-width: 80%;
+    margin: 20px auto;
+    border-radius: 50%;
+}

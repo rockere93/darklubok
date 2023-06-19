@@ -1,0 +1,23 @@
+.button__closed {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: absolute;
+    top: 6px;
+    left: 20px;
+    z-index: 1;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.button__closed::before {
+    font-family: Arial, Helvetica, sans-serif;
+    content: "+";
+    position: absolute;
+    top: -7px;
+    left: 6px;
+    rotate: 45deg;
+    font-size: 7vh;
+    color: #740808;
+}
+
