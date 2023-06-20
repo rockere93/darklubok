@@ -32,7 +32,7 @@
     justify-content: flex-start;
     align-content: start;
     flex-wrap: wrap;
-    padding: 5vh 2vh 0;
+    padding: 10vh 2vh 5vh;
     width: 70%;
 }
 
@@ -60,6 +60,7 @@
 
 
 .character-window__player-info {
+    padding-top: 8vh;
     width: 30%;
     border-left: 2px solid black;
 }
@@ -68,4 +69,33 @@
     max-width: 80%;
     margin: 20px auto;
     border-radius: 50%;
+}
+
+
+
+.player-info__health__back {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;    
+    width: 80%;
+    height: 4.5vh;
+    background-color: black;
+    border-radius: 10px;
+
+    &>.player-info__health__bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 4.5vh;
+        background-color: rgb(198, 2, 2);
+        border-radius: 10px;
+    }
+
+    &>.player-info__health__text {
+        z-index: 100;
+        color: wheat;
+        position: relative;
+        vertical-align: middle;
+    }
 }

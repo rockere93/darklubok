@@ -4,6 +4,7 @@ const player = {
     name: '',
     gender: '',
     inventory: [],
+    maxhealth: 100,
     health: 100,
     attacks: [
         {

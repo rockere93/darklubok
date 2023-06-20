@@ -73,4 +73,12 @@ function hitDamage (subject, object, indexAttack) {
     animationText(fightString, 1000);
 };
 
+
+function changeHP (value) {
+    const playerHealthBar = document.querySelector('.player-info__health__bar');
+    const playerHealthText = document.querySelector('.player-info__health__text')
+    
+
+}
+
 export default goToFight;

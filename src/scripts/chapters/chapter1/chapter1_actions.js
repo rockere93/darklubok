@@ -6,14 +6,10 @@ import { mainfield, mainfieldBody, pageBody } from '../../../scripts/DOM-element
 import animationText from '../../../scripts/animation/animationText';
 import addItemInventory from '../../main/addItemInventory';
 import oldKitchenKnife from '../../items/old_kitchen_knife';
+import medalionAlena from '../../items/medalion_Alena';
 
 function openLockerDoor () {
     deleteCardButton(part1[0].buttons, 'Оглядеться');
-    addItemInventory(oldKitchenKnife);
-    addItemInventory(oldKitchenKnife);
-    addItemInventory(oldKitchenKnife);
-    addItemInventory(oldKitchenKnife);
-    addItemInventory(oldKitchenKnife);
     addItemInventory(oldKitchenKnife);
     goToStoryCard(part1, 2);
 }
@@ -36,7 +32,7 @@ function takeFragments () {
 function takeRoundedObject () {
     deleteCardButton(part1[3].buttons, 'Вытащить округлый предмет');
     goToStoryCard(part1, 4);
-    player.inventory.push({ name: 'Амулет с надписью "Алёна"' });
+    addItemInventory(medalionAlena);
 }
 
 function tryOpenDoor () {
