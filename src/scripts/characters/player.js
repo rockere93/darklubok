@@ -4,7 +4,8 @@ const player = {
     name: '',
     gender: '',
     inventory: [],
-    health: 100,
+    maxhealth: 35,
+    health: 35,
     attacks: [
         {
             name: 'Удар рукой',
