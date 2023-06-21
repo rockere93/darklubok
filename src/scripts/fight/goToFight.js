@@ -23,9 +23,8 @@ function fightRound (player, enemy) {
         const buttonsArray = enemy.buttonsDefeat;
         for (const button of buttonsArray) {
             let argArray = [];
-            let newButton;
+            const newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
             if (button.arg) { argArray = button.arg; };
-            newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
             buttonsBlock.append(newButton);
             animationText(buttonsBlock, 3000);
         };
@@ -71,11 +70,10 @@ function hitDamage (subject, object, indexAttack) {
     animationText(fightString, 1000);
 };
 
-
 function changeHP () {
     const playerHealthBar = document.querySelector('.player-info__health__bar');
     const playerHealthText = document.querySelector('.player-info__health__text');
-    playerHealthText.textContent = player.health + "/" + player.maxhealth; 
+    playerHealthText.textContent = player.health + '/' + player.maxhealth;
     playerHealthBar.style.width = Math.floor((player.health / player.maxhealth) * 100) + '%';
 }
 

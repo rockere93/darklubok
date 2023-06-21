@@ -3,7 +3,7 @@ function sidemenuListener () {
     const characterWindow = document.querySelector('.character-window');
     const characterButton = document.querySelector('.sideMenu__button, .character');
 
-// -----------ФУНКЦИЯ ДЛЯ НАЗНАЧЕНИЯ ОТКРЫТИЯ И ЗАКРЫТИЯ ОКНА---------- //
+    // -----------ФУНКЦИЯ ДЛЯ НАЗНАЧЕНИЯ ОТКРЫТИЯ И ЗАКРЫТИЯ ОКНА---------- //
 
     function openPopup (popup) {
         popup.classList.remove('hidden');
@@ -19,8 +19,7 @@ function sidemenuListener () {
         buttonClosed.addEventListener('click', closedPopup);
     }
 
-
-// -----------НАЗНАЧАЕМ СЛУШАТЕЛЕЙ НА КНОПКИ---------- //
+    // -----------НАЗНАЧАЕМ СЛУШАТЕЛЕЙ НА КНОПКИ---------- //
 
     characterButton.addEventListener('click', function () {
         openPopup(characterWindow);
