@@ -25,11 +25,7 @@ function fightRound (player, enemy) {
             let argArray = [];
             let newButton;
             if (button.arg) { argArray = button.arg; };
-            if (button.functionButton.name === 'goToStoryCard') {
-                newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
-            } else {
-                newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
-            }
+            newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
             buttonsBlock.append(newButton);
             animationText(buttonsBlock, 3000);
         };
