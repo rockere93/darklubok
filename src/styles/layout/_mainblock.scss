@@ -6,7 +6,7 @@ body {
     position: relative;
     margin: 0 auto;
     max-width: 107vh;
-    min-height: 88vh;
+    height: 88vh;
     font-size: 3.5vh;
     font-family: 'Vezitsa', 'Fira Sans', Arial, sans-serif;
 }
@@ -15,6 +15,18 @@ body {
     padding: 7vh 14vh;
 }
 
+.viewport {
+    max-height: 60vh;
+	overflow: hidden;
+    padding-bottom: 3vh;
+    border-bottom: 2px solid black;
+}
+
 .textCard {
+    max-height: 50vh;
     margin-bottom: 15px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
