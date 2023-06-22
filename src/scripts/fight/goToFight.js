@@ -1,6 +1,7 @@
 import makeButton from '../main/makeButton';
 import animationText from '../animation/animationText';
 import getRandomInteger from '../main/getRandomInteger';
+import scrollTextDown from '../animation/scrollText';
 import { mainfieldBody, buttonsBlock, textCard, viewport } from '../DOM-elements/mainelements';
 import player from '../characters/player';
 
@@ -18,6 +19,7 @@ function goToFight (player, enemy) {
 function fightRound (player, enemy) {
     const indexAttack = getRandomInteger(0, enemy.attacks.length - 1);
     hitDamage(enemy, player, indexAttack);
+    scrollTextDown(); // времянка, пока нет дизайна скрола
     changeHP();
     if (player.health <= 0) {
         const buttonsArray = enemy.buttonsDefeat;
