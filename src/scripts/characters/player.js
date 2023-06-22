@@ -9,24 +9,39 @@ const player = {
     attacks: [
         {
             name: 'Удар рукой',
+            get text () {
+                if (this._isHit) return `Вы бьёте противника кулаком. Он получает ${this._damage} урона`; 
+                return 'Вы промахнулись';
+                
+            },
             get damagePoints () {
-                this._damage = getRandomInteger(0, 5);
+                this._damage = getRandomInteger(1, 5);
                 return this._damage;
             },
-            get text () {
-                if (this._damage === 0) return 'Вы промахнулись';
-                return `Вы тыкаете кулаком по противнику. Он получает ${this._damage} урона`;
+            get isHit () {
+                this._chanceHit = 25;
+                if (getRandomInteger(0, 100) <= this._chanceHit) {
+                    return this._isHit = true;
+                }
+                return this._isHit = false;
             }
         },
         {
             name: 'Пинок',
+            get text () {
+                if (this._isHit) return `Вы попали по противнику и нанесли ${this._damage} урона`; 
+                return 'Вы промахнулись';
+            },
             get damagePoints () {
-                this._damage = getRandomInteger(0, 5);
+                this._damage = getRandomInteger(3, 10);
                 return this._damage;
             },
-            get text () {
-                if (this._damage === 0) return 'Вы промахнулись';
-                return `Удар ногой наносит ${this._damage} урона`;
+            get isHit () {
+                this._chanceHit = 70;
+                if (getRandomInteger(0, 100) <= this._chanceHit) {
+                    return this._isHit = true;
+                }
+                return this._isHit = false
             }
         }
 

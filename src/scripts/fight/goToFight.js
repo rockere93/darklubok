@@ -23,9 +23,8 @@ function fightRound (player, enemy) {
         const buttonsArray = enemy.buttonsDefeat;
         for (const button of buttonsArray) {
             let argArray = [];
-            let newButton;
             if (button.arg) { argArray = button.arg; };
-            newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
+            const newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
             buttonsBlock.append(newButton);
             animationText(buttonsBlock, 3000);
         };
@@ -47,11 +46,7 @@ function PlayerAttack (player, enemy, indexAttack) {
             let argArray = [];
             let newButton;
             if (button.arg) { argArray = button.arg; };
-            if (button.functionButton.name === 'goToStoryCard') {
-                newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
-            } else {
-                newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
-            }
+            newButton = makeButton(button.nameButton, button.functionButton, ...argArray);
             buttonsBlock.append(newButton);
             animationText(buttonsBlock, 3000);
         };
@@ -62,7 +57,10 @@ function PlayerAttack (player, enemy, indexAttack) {
 };
 
 function hitDamage (subject, object, indexAttack) {
-    object.health -= subject.attacks[indexAttack].damagePoints;
+    if (subject.attacks[indexAttack].isHit) {
+        console.log(subject.attacks[indexAttack].isHit);
+        object.health -= subject.attacks[indexAttack].damagePoints;
+    }
     let fightString = document.createElement('p');
     fightString.textContent = `${subject.attacks[indexAttack].text}. ` + `Осталось здоровья: ${object.health}`;
     fightString.classList.add('fightString', '_opacityZero');

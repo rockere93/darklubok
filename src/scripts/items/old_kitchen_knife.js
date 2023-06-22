@@ -7,24 +7,38 @@ const oldKitchenKnife = {
     weaponAttaсks: [
         {
             name: 'Ударить кухонным ножом',
+            get text () {
+                if (this._isHit)return `Вы бьете ножом, как умеете и наносите ${this._damage} урона`;
+                return 'ВЫ промахнулись';
+            },
             get damagePoints () {
-                this._damage = getRandomInteger(0, 5);
+                this._damage = getRandomInteger(4, 9);
                 return this._damage;
             },
-            get text () {
-                if (this._damage === 0) return 'ВЫ промахнулись';
-                return `Вы бьете ножом, как умеете и наносите ${this._damage} урона`;
+            get isHit () {
+                this._chanceHit = 95;
+                if (getRandomInteger(0, 100) <= this._chanceHit) {
+                    return this._isHit = true;
+                }
+                return this._isHit = false
             }
         },
         {
             name: 'Порез ножом',
             get damagePoints () {
-                this._damage = getRandomInteger(0, 5);
+                this._damage = getRandomInteger(3, 8);
                 return this._damage;
             },
             get text () {
-                if (this._damage === 0) return 'ВЫ промахнулись';
-                return `Вы попали, но выщербленное лезвие слегка ранит противника на ${this._damage} урона`;
+                if (this._isHit) return `Вы попали, но выщербленное лезвие слегка ранит противника на ${this._damage} урона`;
+                return 'ВЫ промахнулись';
+            },
+            get isHit () {
+                this._chanceHit = 95;
+                if (getRandomInteger(0, 100) <= this._chanceHit) {
+                    return this._isHit = true;
+                }
+                return this._isHit = false
             }
         }
     ]
