@@ -3,8 +3,9 @@ import getRandomInteger from '../../../scripts/main/getRandomInteger';
 
 const gus = {
     name: 'Гусь-лебедь',
-    img: '',
+    avatar: require('../../../img/chapter1/gus-lebed.jpg'),
     description: '',
+    maxhealth: 50,
     health: 50,
     attacks: [
         {

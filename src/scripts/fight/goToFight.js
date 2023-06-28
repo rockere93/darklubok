@@ -2,10 +2,11 @@ import makeButton from '../main/makeButton';
 import animationText from '../animation/animationText';
 import getRandomInteger from '../main/getRandomInteger';
 import scrollTextDown from '../animation/scrollText';
-import { mainfieldBody, buttonsBlock, textCard, viewport } from '../DOM-elements/mainelements';
+import { mainfield, mainfieldBody, buttonsBlock, textCard, viewport } from '../DOM-elements/mainelements';
 import player from '../characters/player';
 
-function goToFight (player, enemy) {
+function goToFight(player, enemy) {
+    showCharactersSideblock(player, enemy);
     mainfieldBody.classList.remove('_opacityZero');
     textCard.innerHTML = ' ';
     buttonsBlock.innerHTML = ' ';
@@ -16,7 +17,23 @@ function goToFight (player, enemy) {
     fightRound(player, enemy);
 }
 
-function fightRound (player, enemy) {
+function showCharactersSideblock(player, enemy) {
+    mainfield.insertAdjacentHTML('afterbegin', `<div class='character-sideblock player'>
+        <img src='${player.avatar}'>
+        <div class="fight health__back">
+        <div class="fight health__bar"></div>
+        <span class="fight health__text">${player.health}/${player.maxhealth}</span>
+        </div></div>`);
+    mainfield.insertAdjacentHTML('afterbegin', `<div class='character-sideblock enemy'>
+        <img src='${enemy.avatar}'>
+        <div class="fight health__back">
+        <div class="fight health__bar"></div>
+        <span class="fight health__text">${enemy.health}/${enemy.maxhealth}</span>
+        </div></div>`);
+    
+}
+
+function fightRound(player, enemy) {
     const indexAttack = getRandomInteger(0, enemy.attacks.length - 1);
     hitDamage(enemy, player, indexAttack);
     scrollTextDown(); // времянка, пока нет дизайна скрола
@@ -39,8 +56,9 @@ function fightRound (player, enemy) {
     }
 }
 
-function PlayerAttack (player, enemy, indexAttack) {
+function PlayerAttack(player, enemy, indexAttack) {
     hitDamage(player, enemy, indexAttack);
+    scrollTextDown();
     if (enemy.health <= 0) {
         buttonsBlock.innerHTML = ' ';
         const buttonsArray = enemy.buttonsWin;
@@ -53,14 +71,14 @@ function PlayerAttack (player, enemy, indexAttack) {
             animationText(buttonsBlock, 3000);
         };
     } else {
+        animationText(buttonsBlock, 3000);
         buttonsBlock.innerHTML = ' ';
-        fightRound(player, enemy);
+        setTimeout(() => fightRound(player, enemy), 3000);
     }
 };
 
-function hitDamage (subject, object, indexAttack) {
+function hitDamage(subject, object, indexAttack) {
     if (subject.attacks[indexAttack].isHit) {
-        console.log(subject.attacks[indexAttack].isHit);
         object.health -= subject.attacks[indexAttack].damagePoints;
     }
     let fightString = document.createElement('p');
@@ -72,10 +90,10 @@ function hitDamage (subject, object, indexAttack) {
 };
 
 
-function changeHP () {
-    const playerHealthBar = document.querySelector('.player-info__health__bar');
-    const playerHealthText = document.querySelector('.player-info__health__text');
-    playerHealthText.textContent = player.health + "/" + player.maxhealth; 
+function changeHP() {
+    const playerHealthBar = document.querySelector('.player-info .health__bar');
+    const playerHealthText = document.querySelector('.player-info .health__text');
+    playerHealthText.textContent = player.health + "/" + player.maxhealth;
     playerHealthBar.style.width = Math.floor((player.health / player.maxhealth) * 100) + '%';
 }
 

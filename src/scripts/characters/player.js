@@ -4,6 +4,7 @@ const player = {
     name: '',
     gender: '',
     inventory: [],
+    avatar: require('../../img/characters/man.jpg'),
     maxhealth: 35,
     health: 35,
     attacks: [

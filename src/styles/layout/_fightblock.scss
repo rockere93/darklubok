@@ -13,3 +13,29 @@
 .fightString:nth-child(2n+1) {
     color: #c02020;
 }
+
+.character-sideblock {
+    position: absolute;
+    width: 16vh;
+    height: 24vh;
+    background-image: url('/src/img/layout/sidemenu/background.png');
+}
+
+.character-sideblock.player {
+    top: 7vh;
+    left: -19vh;
+}
+
+.character-sideblock.enemy {
+    top: 7vh;
+    right: -19vh;
+}
+
+.character-sideblock > img {
+    margin-bottom: 2vh;
+}
+
+.sidemenu.fight {
+    top: 38vh;
+}
+
