@@ -1,12 +1,40 @@
 .sidemenu {
     position: absolute;
-    top: 4vh;
     left: -10vh;
     padding: 30px 4px;  
     background-image: url('/src/img/layout/sidemenu/background.png');
     border: 2px solid rgb(59, 36, 36);
     border-radius: 18px;  
-    
+}
+
+@keyframes sidemenu-down {
+    from {
+        top: 4vh;
+    }
+    to {
+        top: 36vh;
+    }
+}
+
+@keyframes sidemenu-up {
+    from {
+        top: 36vh;
+    }
+    to {
+        top: 4vh;
+    }
+}
+
+.sidemenu_up {
+    top: 4vh;
+    animation-name: sidemenu-up;
+    animation-duration: 2s;
+}
+
+.sidemenu_down {
+    top: 36vh;
+    animation-name: sidemenu-down;
+    animation-duration: 2s;   
 }
 
 .sidemenu__list {

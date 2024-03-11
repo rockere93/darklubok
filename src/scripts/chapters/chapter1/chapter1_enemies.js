@@ -5,8 +5,8 @@ const gus = {
     name: 'Гусь-лебедь',
     avatar: require('../../../img/chapter1/gus-lebed.jpg'),
     description: '',
-    maxhealth: 50,
-    health: 50,
+    maxhealth: 5,
+    health: 5,
     attacks: [
         {
             name: 'щипок',
